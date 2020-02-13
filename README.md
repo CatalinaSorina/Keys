@@ -1,7 +1,7 @@
 ## Keys
 
 You might think of the importance of the keys of an object,  
-so this components style for you app
+so this components style for your app
 
 ### Keys components
 
