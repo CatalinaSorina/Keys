@@ -6,8 +6,11 @@ export const inputDefaultStyle = {
   borderRadius: "1rem",
   outline: "none",
   border: "0.1rem dotted grey",
-  backgroundColor: "#FFCD64",
-  color: "grey",
+  backgroundColor: "#EDC368",
+  color: "orange",
   fontSize: "2rem",
-  textAlign: "center"
+  textShadow: "0 0.05rem 0.1rem black",
+  textAlign: "center",
+  placeholderColor: "#85B48C",
+  placeholderTextShadow: "none"
 };
