@@ -25,6 +25,7 @@ const InputStyled = styled.input`
 
 const Input = ({ style, placeholder, fireOnChange, fireClick }) => (
   <InputStyled
+    style={style}
     addStyle={combineStyle(style, inputDefaultStyle)}
     placeholder={placeholder}
     onChange={fireOnChange}
