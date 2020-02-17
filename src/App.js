@@ -12,16 +12,25 @@ const App = () => (
       <Tab content={<>
         <header>Header, in work</header>
         <Input placeholder="try this input" />
-        <Button text="click" style={{ color: "purple", backgroundColor: "plum", borderColor: "purple" }} />
+        <Button text="click" style={{ color: "purple", backgroundColor: "plum", boxShadowColor: "purple" }} />
         <footer>bottom</footer>
       </>}
-        buttonStyle={{ backgroundColor: "pink", borderColor: "rosybrown" }}
+        buttonStyle={{ backgroundColor: "pink", boxShadowColor: "rosybrown" }}
         tabStyle={{ backgroundColor: "pink", borderColor: "rosybrown", alignItems: "center" }}
       />
       <Tab content={<>
         <header>Header, in work</header>
         <footer>bottom</footer>
-      </>} />
+      </>}
+        openButtonText="see me"
+      />
+      <Tab content={<>
+        <header>Header, in work</header>
+        <footer>bottom</footer>
+      </>}
+        openButtonText="try me"
+        closeButtonText="close me"
+      />
     </>}
   />
 );

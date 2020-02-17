@@ -1,9 +1,10 @@
 export const buttonDefaultStyle = {
-    width: "10rem",
-    height: "2rem",
+    width: "5rem",
     borderRadius: "1rem",
-    backgroundColor: "#CA895F",
-    borderColor: "#A15E49",
+    backgroundColor: "transparent",
+    boxShadow: "0 0 0.1rem 0.2rem ",
+    boxShadowColor: "#A15E49",
     color: "4E3822",
-    outline: "none"
+    outline: "none",
+    padding: "0.5rem"
 }
