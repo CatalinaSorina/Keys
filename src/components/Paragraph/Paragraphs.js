@@ -1,6 +1,6 @@
 import React from "react";
 import style from "styled-components";
-import { paragraphDefaultStyle } from "./paragraphDefaultStyle";
+import { paragraphsDefaultStyle } from "./paragraphsDefaultStyle";
 import { combineStyle } from "../../data/utils";
 
 const ParagraphStyled = style.p`
@@ -11,12 +11,12 @@ const changeTextWithLineBreaks = (text, style) => text.match(/[^\r\n]+/g).map((l
     <ParagraphStyled
         key={i + "line"}
         style={style}
-        addStyle={combineStyle(style, paragraphDefaultStyle)}
+        addStyle={combineStyle(style, paragraphsDefaultStyle)}
     >
         {line}
     </ParagraphStyled>
 )
 
-const P = ({ text, style }) => <>{changeTextWithLineBreaks(text, style)}</>
+const Paragraphs = ({ text, style }) => <>{changeTextWithLineBreaks(text, style)}</>
 
-export default P;
+export default Paragraphs;
