@@ -7,7 +7,7 @@ import Tab from "./components/Tab/Tab";
 
 const App = () => (
   <Wrapper
-    addStyle={{ width: "98vw", height: "96vh", border: "none", alignItems: "center", padding: "1rem" }}
+    style={{ width: "98vw", height: "96vh", border: "none", alignItems: "center", padding: "1rem" }}
     content={<>
       <Tab content={<>
         <header>Header, in work</header>
@@ -15,7 +15,7 @@ const App = () => (
         <Button text="click" style={{ color: "purple", backgroundColor: "plum", boxShadowColor: "purple" }} />
         <footer>bottom</footer>
       </>}
-        buttonStyle={{ backgroundColor: "pink", boxShadowColor: "rosybrown" }}
+        buttonStyle={{ backgroundColor: "pink", boxShadowColor: "rosybrown", color: "rosybrown" }}
         tabStyle={{ backgroundColor: "pink", borderColor: "rosybrown", alignItems: "center" }}
       />
       <Tab content={<>

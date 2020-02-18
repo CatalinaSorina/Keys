@@ -37,8 +37,8 @@ export const WrapperStyle = styled.div`
   }
 `;
 
-const Wrapper = ({ addStyle, content }) => (
-  <WrapperStyle withStyle={combineStyle(addStyle, wrapperDefaultStyle)}>{content}</WrapperStyle>
+const Wrapper = ({ style, content }) => (
+  <WrapperStyle style={style} withStyle={combineStyle(style, wrapperDefaultStyle)}>{content}</WrapperStyle>
 );
 
 export default Wrapper;
