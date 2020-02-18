@@ -25,15 +25,21 @@ export const WrapperStyle = styled.div`
 
   &::-webkit-scrollbar-track {
     border-radius: ${({ withStyle }) => withStyle.scrollbarTrack.borderRadius};
-    -webkit-box-shadow: ${({ withStyle }) => withStyle.scrollbarTrack.webkitBoxShadow};
+    box-shadow: ${({ withStyle }) => withStyle.scrollbarTrack.webkitBoxShadow};
     background-color: ${({ withStyle }) => withStyle.scrollbarTrack.backgroundColor};
   }
 
   &::-webkit-scrollbar-thumb {
     border-radius: ${({ withStyle }) => withStyle.scrollbarThumb.borderRadius};
-    -webkit-box-shadow: ${({ withStyle }) => withStyle.scrollbarThumb.webkitBoxShadow};
+    box-shadow: ${({ withStyle }) => withStyle.scrollbarThumb.boxShadow};
     background-color: ${({ withStyle }) => withStyle.scrollbarThumb.backgroundColor};
     background-image: ${({ withStyle }) => withStyle.scrollbarThumb.backgroundImage}
+  }
+
+  &::selection {
+    color: ${({ withStyle }) => withStyle.selectColor};
+    background-color:${({ withStyle }) => withStyle.selectBackgroundColor};
+    text-shadow:${({ withStyle }) => withStyle.selectTextShadow};
   }
 `;
 

@@ -5,17 +5,20 @@ export const wrapperDefaultStyle = {
   justifyContent: "space-between",
   width: "99.8vw",
   height: "99.7vh",
-  color: "gray",
-  border: "0.1rem dotted rgb(86, 105, 80)",
-  backgroundColor: "rgba(136, 255, 100,0.3)",
+  color: "#2D3142",
+  border: "0.1rem dotted #ADACB5",
+  backgroundColor: "#B0D7FF",
   overflow: "auto",
   cursor: "default",
   scrollbarWidth: "1rem",
   scrollbarTrack: {
-    webkitBoxShadow: "inset 0 0 0.1rem rgb(136, 255, 100)"
+    boxShadow: "inset 0 0 0.1rem #81A6CB"
   },
   scrollbarThumb: {
     borderRadius: "1rem",
-    backgroundImage: "linear-gradient(transparent,rgb(136, 255, 100) 50%,transparent)"
-  }
+    backgroundImage: "linear-gradient(transparent,#81A6CB 50%,transparent)"
+  },
+  selectColor: "#FAFF7F",
+  selectBackgroundColor: "transparent",
+  selectTextShadow: "0 0.05rem 0.15rem #2D3142"
 };
