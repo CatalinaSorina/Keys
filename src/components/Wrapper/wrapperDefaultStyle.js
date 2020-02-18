@@ -12,7 +12,7 @@ export const wrapperDefaultStyle = {
   cursor: "default",
   scrollbarWidth: "1rem",
   scrollbarTrack: {
-    boxShadow: "inset 0 0 0.1rem #81A6CB"
+    boxShadow: "inset 0 0 0.1rem transparent"
   },
   scrollbarThumb: {
     borderRadius: "1rem",

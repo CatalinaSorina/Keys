@@ -19,24 +19,24 @@ export const WrapperStyle = styled.div`
   overflow: ${({ withStyle }) => withStyle.overflow};
   cursor: ${({ withStyle }) => withStyle.cursor};
 
-  &::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: ${({ withStyle }) => withStyle.scrollbarWidth};
   }
 
-  &::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     border-radius: ${({ withStyle }) => withStyle.scrollbarTrack.borderRadius};
-    box-shadow: ${({ withStyle }) => withStyle.scrollbarTrack.webkitBoxShadow};
+    box-shadow: ${({ withStyle }) => withStyle.scrollbarTrack.boxShadow};
     background-color: ${({ withStyle }) => withStyle.scrollbarTrack.backgroundColor};
   }
 
-  &::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     border-radius: ${({ withStyle }) => withStyle.scrollbarThumb.borderRadius};
     box-shadow: ${({ withStyle }) => withStyle.scrollbarThumb.boxShadow};
     background-color: ${({ withStyle }) => withStyle.scrollbarThumb.backgroundColor};
     background-image: ${({ withStyle }) => withStyle.scrollbarThumb.backgroundImage}
   }
 
-  &::selection {
+  *::selection {
     color: ${({ withStyle }) => withStyle.selectColor};
     background-color:${({ withStyle }) => withStyle.selectBackgroundColor};
     text-shadow:${({ withStyle }) => withStyle.selectTextShadow};
