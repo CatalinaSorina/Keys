@@ -6,11 +6,11 @@ export const inputDefaultStyle = {
   borderRadius: "1rem",
   outline: "none",
   border: "0.1rem dotted grey",
-  backgroundColor: "#EDC368",
-  color: "orange",
+  backgroundColor: "#81A6CB",
+  color: "#FFCAD4",
   fontSize: "2rem",
   textShadow: "0 0.05rem 0.1rem black",
   textAlign: "center",
-  placeholderColor: "#85B48C",
-  placeholderTextShadow: "none"
+  placeholderColor: "#FFCAD4",
+  placeholderTextShadow: "0 0.01rem 0.05rem black"
 };

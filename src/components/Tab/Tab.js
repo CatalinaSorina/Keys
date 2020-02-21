@@ -17,17 +17,17 @@ const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle }) => {
 
     const buttonTabStyle = {
         margin: "1rem",
-        backgroundColor: "#91A6FF",
-        boxShadowColor: "#FF88DC",
-        color: "#FAFF7F"
+        display: "absolute"
     }
 
     const wrapperTabStyle = {
         width: "90%",
         height: "90%",
-        backgroundColor: "rgba(255,255,255,0.3)",
-        borderColor: "#FF5154",
-        color: "#91A6FF",
+        border: "0.2rem double #C08497",
+        backgroundColor: "#FFCAD4",
+        color: "#FFFFFF",
+        padding: "1rem",
+        textShadow: "0.1rem 0.1rem 0.2rem #C08497",
         fontFamily: "cursive"
     }
 

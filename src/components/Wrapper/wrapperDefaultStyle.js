@@ -18,7 +18,7 @@ export const wrapperDefaultStyle = {
     borderRadius: "1rem",
     backgroundImage: "linear-gradient(transparent,#81A6CB 50%,transparent)"
   },
-  selectColor: "#FAFF7F",
+  selectColor: "#FFECB8",
   selectBackgroundColor: "transparent",
-  selectTextShadow: "0 0.05rem 0.15rem #2D3142"
+  selectTextShadow: "0 0.05rem 0.2rem #2D3142"
 };

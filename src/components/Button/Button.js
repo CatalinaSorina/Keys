@@ -6,6 +6,7 @@ import style from "styled-components";
 const ButtonStyle = style.button`
     width: ${({ addMoreStyle }) => addMoreStyle.width};
     height: ${({ addMoreStyle }) => addMoreStyle.height};
+    border: ${({ addMoreStyle }) => addMoreStyle.border};
     border-radius: ${({ addMoreStyle }) => addMoreStyle.borderRadius};
     background-color: ${({ addMoreStyle }) => addMoreStyle.backgroundColor};
     box-shadow: ${({ addMoreStyle }) => addMoreStyle.boxShadow + addMoreStyle.boxShadowColor};
@@ -14,7 +15,8 @@ const ButtonStyle = style.button`
     padding: ${({ addMoreStyle }) => addMoreStyle.padding};
 
     &:hover {
-        background:transparent;
+        background:${({ addMoreStyle }) => addMoreStyle.hoverBackground};
+        color:${({ addMoreStyle }) => addMoreStyle.hoverColor};
     }
     &:active {
         color:${({ addMoreStyle }) => addMoreStyle.backgroundColor};
