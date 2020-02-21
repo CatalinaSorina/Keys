@@ -12,7 +12,7 @@ const App = () => (
     content={<>
       <Tab content={<>
         <header>Header, in work</header>
-        <Input placeholder="try this input" />
+        <Input placeholder="try this input" text="writen"/>
         <Paragraphs text="Lorem ipsum dolor amet stumptown actually subway tile squid try-hard tilde biodiesel taiyaki paleo. Coloring book palo santo jean shorts green juice 90's hoodie chicharrones hammock. Chicharrones heirloom 90's polaroid ugh hella. Craft beer tousled organic tacos gastropub church-key. Post-ironic heirloom butcher unicorn pitchfork cloud bread direct trade offal kitsch fam. Lomo street art paleo blue bottle plaid poke pitchfork everyday carry master cleanse godard photo booth gastropub. Typewriter vinyl pitchfork keytar readymade, cold-pressed austin drinking vinegar chartreuse franzen banh mi gluten-free.
         Sartorial forage PBR&B, gluten-free shaman banjo man braid next level scenester. Cliche cray fingerstache selfies trust fund YOLO. Swag aesthetic shaman, semiotics woke cornhole iceland mumblecore sartorial artisan organic salvia bushwick mixtape. Tattooed salvia mustache pop-up put a bird on it.
         Godard enamel pin vape synth vaporware. Viral everyday carry portland pork belly locavore. Hella sartorial twee umami keytar, pitchfork biodiesel hashtag snackwave hot chicken gluten-free lyft poutine. Narwhal shabby chic irony kickstarter tbh, chia mixtape gentrify listicle.
@@ -22,8 +22,8 @@ const App = () => (
         I bet you’re still using Bootstrap too…" />
         <Button 
           text="click"
-          style={{ color: "darkolivegreen", backgroundColor: "lightgreen", hoverBackground:"darkolivegreen", boxShadowColor: "darkolivegreen" }} 
-          fireClick={e=>console.log(e.target)}
+          style={{ color: "darkolivegreen", backgroundColor: "lightgreen", hoverBackground:"darkolivegreen", boxShadowColor: "darkolivegreen", margin:"2rem" }} 
+          fireClick={console.log("YOU CLICKED ME ^_^")}
         />
         <footer>bottom</footer>
       </>}
@@ -33,7 +33,7 @@ const App = () => (
       <Button 
         text="click"
         style={{ color: "purple", backgroundColor: "plum", hoverBackground:"pink", boxShadowColor: "purple" }} 
-        fireClick={e=>console.log(e.target)}
+        fireClick={e=>console.log("BUUUM CICA:",e.target)}
       />
       <Input placeholder="try me" />
     </>}

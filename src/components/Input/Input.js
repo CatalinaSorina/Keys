@@ -23,9 +23,10 @@ const InputStyled = styled.input`
   }
 `
 
-const Input = ({ style, placeholder, fireOnChange, fireClick }) => (
+const Input = ({ style, placeholder, text, fireOnChange, fireClick }) => (
   <InputStyled
     style={removeKeysFromStyle(style, inputDefaultStyle)}
+    value={text}
     addStyle={combineStyle(style, inputDefaultStyle)}
     placeholder={placeholder}
     onChange={fireOnChange}
