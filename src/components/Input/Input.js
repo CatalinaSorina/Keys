@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { combineStyle } from "../../data/utils";
+import { combineStyle, removeKeysFromStyle } from "../../data/utils";
 import { inputDefaultStyle } from "./inputDefaultStyle";
 
 const InputStyled = styled.input`
@@ -25,7 +25,7 @@ const InputStyled = styled.input`
 
 const Input = ({ style, placeholder, fireOnChange, fireClick }) => (
   <InputStyled
-    style={style}
+    style={removeKeysFromStyle(style, inputDefaultStyle)}
     addStyle={combineStyle(style, inputDefaultStyle)}
     placeholder={placeholder}
     onChange={fireOnChange}

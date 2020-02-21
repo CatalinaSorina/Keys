@@ -6,6 +6,7 @@ export const buttonDefaultStyle = {
     boxShadow: "0 0.1rem 0.2rem 0.1rem ",
     boxShadowColor: "#C08497",
     color: "#C08497",
+    activeColor: "transparent",
     outline: "none",
     padding: "0.5rem",
     hoverBackground: "#C08497",

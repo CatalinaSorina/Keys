@@ -1,5 +1,5 @@
 import React from "react";
-import { combineStyle } from "../../data/utils";
+import { combineStyle, removeKeysFromStyle } from "../../data/utils";
 import { wrapperDefaultStyle } from "./wrapperDefaultStyle";
 import styled from "styled-components";
 
@@ -44,7 +44,7 @@ export const WrapperStyle = styled.div`
 `;
 
 const Wrapper = ({ style, content }) => (
-  <WrapperStyle style={style} withStyle={combineStyle(style, wrapperDefaultStyle)}>{content}</WrapperStyle>
+  <WrapperStyle style={removeKeysFromStyle(style, wrapperDefaultStyle)} withStyle={combineStyle(style, wrapperDefaultStyle)}>{content}</WrapperStyle>
 );
 
 export default Wrapper;

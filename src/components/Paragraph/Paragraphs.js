@@ -1,7 +1,7 @@
 import React from "react";
 import style from "styled-components";
 import { paragraphsDefaultStyle } from "./paragraphsDefaultStyle";
-import { combineStyle } from "../../data/utils";
+import { combineStyle, removeKeysFromStyle } from "../../data/utils";
 
 const ParagraphStyled = style.p`
     text-indent:${({ addStyle }) => addStyle.indent};
@@ -12,7 +12,7 @@ const ParagraphStyled = style.p`
 const changeTextWithLineBreaks = (text, style) => text.match(/[^\r\n]+/g).map((line, i) =>
     <ParagraphStyled
         key={i + "line"}
-        style={style}
+        style={removeKeysFromStyle(style, paragraphsDefaultStyle)}
         addStyle={combineStyle(style, paragraphsDefaultStyle)}
     >
         {line}

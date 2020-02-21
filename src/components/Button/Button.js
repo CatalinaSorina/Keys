@@ -1,6 +1,6 @@
 import React from "react";
 import { buttonDefaultStyle } from "./buttonDefaultStyle";
-import { combineStyle } from "../../data/utils";
+import { combineStyle, removeKeysFromStyle } from "../../data/utils";
 import style from "styled-components";
 
 const ButtonStyle = style.button`
@@ -19,12 +19,12 @@ const ButtonStyle = style.button`
         color:${({ addMoreStyle }) => addMoreStyle.hoverColor};
     }
     &:active {
-        color:${({ addMoreStyle }) => addMoreStyle.backgroundColor};
+        color:${({ addMoreStyle }) => addMoreStyle.activeColor};
     }
 `;
 
 const Button = ({ style, text, fireClick }) => (
-    <ButtonStyle style={style} addMoreStyle={combineStyle(style, buttonDefaultStyle)} onClick={fireClick}>{text}</ButtonStyle>
+    <ButtonStyle style={removeKeysFromStyle(style, buttonDefaultStyle)} addMoreStyle={combineStyle(style, buttonDefaultStyle)} onClick={fireClick}>{text}</ButtonStyle>
 );
 
 export default Button;
