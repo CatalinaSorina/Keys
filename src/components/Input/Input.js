@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { combineStyle, removeKeysFromStyle } from "../../data/utils";
 import { inputDefaultStyle } from "./inputDefaultStyle";
-
 const InputStyled = styled.input`
   width: ${({ addStyle }) => addStyle.width};
   height: ${({ addStyle }) => addStyle.height};
@@ -23,15 +22,22 @@ const InputStyled = styled.input`
   }
 `
 
-const Input = ({ style, placeholder, text, fireOnChange, fireClick }) => (
-  <InputStyled
+const Input = ({ style, placeholder, text, fireChange, fireClick }) => {
+  const [textState, setTextState] = useState(text);
+
+  const handleOnChange = (e) => {
+    setTextState(e.target.value);
+    fireChange && typeof fireChange === "function" && fireChange();
+  }
+
+  return <InputStyled
     style={removeKeysFromStyle(style, inputDefaultStyle)}
-    value={text}
+    value={textState}
     addStyle={combineStyle(style, inputDefaultStyle)}
     placeholder={placeholder}
-    onChange={fireOnChange}
+    onChange={handleOnChange}
     onClick={fireClick}
   />
-);
+};
 
 export default Input;
