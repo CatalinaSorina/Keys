@@ -6,6 +6,15 @@ import Button from "./components/Button/Button";
 import Tab from "./components/Tab/Tab";
 import Paragraphs from "./components/Paragraph/Paragraphs";
 
+const tabAsModalStyle = {
+  buttonStyle: {
+    position:"fixed",
+    left:"1rem"
+  },
+  tabStyle: {
+  }
+}
+
 const App = () => (
   <Wrapper
     style={{ width: "98vw", height: "96vh", alignItems: "center", padding: "1rem" }}
@@ -30,10 +39,17 @@ const App = () => (
         openButtonText="see me"
         tabStyle={{alignItems:"center"}}
       />
-      <Button 
-        text="click"
-        style={{ color: "purple", backgroundColor: "plum", hoverBackground:"pink", boxShadowColor: "purple" }} 
-        fireClick={e=>console.log("BUUUM CICA:",e.target)}
+      <Tab
+        buttonStyle={tabAsModalStyle.buttonStyle}
+        tabStyle={tabAsModalStyle.tabStyle}
+        openTabText="Stun"
+        modalCloseButton={true}
+        modalCloseButtonStyle={{boxShadow:"none"}}
+        content={<>
+          <div><Paragraphs text="csacsaasccjasnkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk sajkncjc asjkmcljmc  sajknckjsa
+          dfmdslkf,dslk,flkds kjdsmflkmdslkf smdflkmds
+          fsd,mfkds,f" /></div>
+        </>}
       />
       <Input placeholder="try me" />
     </>}
