@@ -43,7 +43,7 @@ const App = () => (
         buttonStyle={tabAsModalStyle.buttonStyle}
         tabStyle={tabAsModalStyle.tabStyle}
         openTabText="Stun"
-        modalCloseButton={true}
+        tabAsModal={true}
         modalCloseButtonStyle={{boxShadow:"none"}}
         content={<>
           <div><Paragraphs text="csacsaasccjasnkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk sajkncjc asjkmcljmc  sajknckjsa

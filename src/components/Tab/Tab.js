@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 import Wrapper from "../Wrapper/Wrapper";
 
-const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle, modalCloseButton, modalCloseButtonStyle }) => {
-    const [buttonText, setButtonText] = useState(openTabText ? openTabText : modalCloseButton ? "open modal" : "open tab");
+const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle, tabAsModal, modalCloseButtonStyle }) => {
+    const [buttonText, setButtonText] = useState(openTabText ? openTabText : tabAsModal ? "open modal" : "open tab");
     const [tabDisplay, setTabDisplay] = useState("none");
 
     const openTab = () => {
@@ -11,7 +11,7 @@ const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle, modalC
             ((buttonText === openTabText) ?
                 (closeTabText ? setButtonText(closeTabText) : setButtonText(openTabText))
                 : setButtonText(openTabText))
-            : (modalCloseButton ?
+            : (tabAsModal ?
                 setButtonText("open modal")
                 : (buttonText === "open tab" ?
                     setButtonText("close tab")
@@ -32,7 +32,7 @@ const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle, modalC
     }
 
     const checkTabIsModal =
-        modalCloseButton ? {
+        tabAsModal ? {
             position: "fixed",
             zIndex: 4,
             top: "0.2rem",
@@ -63,7 +63,7 @@ const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle, modalC
         <Button text={buttonText} style={{ ...buttonTabStyle, ...buttonStyle }} fireClick={openTab} />
         <Wrapper style={{ ...wrapperTabStyle, ...tabStyle, display: tabDisplay }}
             content={<>
-                {modalCloseButton && <Button text="x" style={{ ...modalButtonStyle, ...modalCloseButtonStyle }} fireClick={() => closeModal()} />}
+                {tabAsModal && <Button text="x" style={{ ...modalButtonStyle, ...modalCloseButtonStyle }} fireClick={() => closeModal()} />}
                 {content}
             </>}
         />
