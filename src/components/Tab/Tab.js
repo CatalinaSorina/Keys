@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 import Wrapper from "../Wrapper/Wrapper";
 
-const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle, tabAsModal, modalCloseButtonStyle }) => {
+const Tab = ({ content, openTabText, closeTabText, buttonStyle, buttonStyledComponent, tabStyle, tabStyledComponent, tabAsModal, modalCloseButtonStyle }) => {
     const [buttonText, setButtonText] = useState(openTabText ? openTabText : tabAsModal ? "open modal" : "open tab");
     const [tabDisplay, setTabDisplay] = useState("none");
 
@@ -60,8 +60,10 @@ const Tab = ({ content, openTabText, closeTabText, buttonStyle, tabStyle, tabAsM
     }
 
     return (<>
-        <Button text={buttonText} style={{ ...buttonTabStyle, ...buttonStyle }} fireClick={openTab} />
-        <Wrapper style={{ ...wrapperTabStyle, ...tabStyle, display: tabDisplay }}
+        <Button text={buttonText} style={{ ...buttonTabStyle, ...buttonStyle }} styledComponent={buttonStyledComponent} fireClick={openTab} />
+        <Wrapper
+            style={{ ...wrapperTabStyle, ...tabStyle, display: tabDisplay }}
+            styledComponent={tabStyledComponent}
             content={<>
                 {tabAsModal && <Button text="x" style={{ ...modalButtonStyle, ...modalCloseButtonStyle }} fireClick={() => closeModal()} />}
                 {content}

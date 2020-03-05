@@ -47,6 +47,8 @@ const App = () => (
       </>}
         openButtonText="see me"
         tabStyle={{alignItems:"center"}}
+        buttonStyledComponent="background-color:red; color:white;"
+        tabStyledComponent="*::selection{background-color:rosybrown;}"
       />
       <Tab
         buttonStyle={tabAsModalStyle.buttonStyle}
