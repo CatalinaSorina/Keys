@@ -18,7 +18,7 @@ const tabAsModalStyle = {
 const App = () => (
   <Wrapper
     style={{ width: "98vw", height: "96vh", alignItems: "center", padding: "1rem" }}
-    styledComponent="&:hover{background-color:#7797B7}"
+    styledComponent="&::selection{background-color:#7797B7;}"
     content={<>
       <Tab content={<>
         <header>Header, in work</header>
@@ -65,6 +65,7 @@ const App = () => (
           </div>
         </>}
       />
+      select me
       <Input 
         placeholder="try me"
         styledComponent="color:red; &::placeholder {color:rgba(255, 0, 0,0.7);}"
