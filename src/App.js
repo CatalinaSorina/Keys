@@ -18,6 +18,7 @@ const tabAsModalStyle = {
 const App = () => (
   <Wrapper
     style={{ width: "98vw", height: "96vh", alignItems: "center", padding: "1rem" }}
+    styledComponent="&:hover{background-color:#7797B7}"
     content={<>
       <Tab content={<>
         <header>Header, in work</header>
