@@ -3,26 +3,30 @@ import styled from "styled-components";
 import { combineStyle, removeKeysFromStyle } from "../../data/utils";
 import { inputDefaultStyle } from "./inputDefaultStyle";
 const InputStyled = styled.input`
-  width: ${({ addStyle }) => addStyle.width};
-  height: ${({ addStyle }) => addStyle.height};
-  padding: ${({ addStyle }) => addStyle.padding};
-  margin: ${({ addStyle }) => addStyle.margin};
-  border-radius: ${({ addStyle }) => addStyle.borderRadius};
-  outline: ${({ addStyle }) => addStyle.outline};
-  border: ${({ addStyle }) => addStyle.border};
-  background-color: ${({ addStyle }) => addStyle.backgroundColor};
-  color: ${({ addStyle }) => addStyle.color};
-  font-size: ${({ addStyle }) => addStyle.fontSize};
-  text-align: ${({ addStyle }) => addStyle.textAlign};
-  text-shadow: ${({ addStyle }) => addStyle.textShadow};
+  ${({ styledComponent, addStyle }) => `
+    width: ${addStyle.width};
+    height: ${addStyle.height};
+    padding: ${addStyle.padding};
+    margin: ${addStyle.margin};
+    border-radius: ${addStyle.borderRadius};
+    outline: ${addStyle.outline};
+    border: ${addStyle.border};
+    background-color: ${addStyle.backgroundColor};
+    color: ${addStyle.color};
+    font-size: ${addStyle.fontSize};
+    text-align: ${addStyle.textAlign};
+    text-shadow: ${addStyle.textShadow};
 
-  &::placeholder {
-    color: ${({ addStyle }) => addStyle.placeholderColor};
-    text-shadow: ${({ addStyle }) => addStyle.placeholderTextShadow};
-  }
+    &::placeholder {
+      color: ${addStyle.placeholderColor};
+      text-shadow: ${addStyle.placeholderTextShadow};
+    }
+    
+    ${styledComponent && styledComponent}
+  `}
 `
 
-const Input = ({ style, placeholder, text, fireChange, fireClick }) => {
+const Input = ({ style, styledComponent, placeholder, text, fireChange, fireClick }) => {
   const [textState, setTextState] = useState(text);
 
   const handleOnChange = (e) => {
@@ -34,6 +38,7 @@ const Input = ({ style, placeholder, text, fireChange, fireClick }) => {
     style={removeKeysFromStyle(style, inputDefaultStyle)}
     value={textState}
     addStyle={combineStyle(style, inputDefaultStyle)}
+    styledComponent={styledComponent}
     placeholder={placeholder}
     onChange={handleOnChange}
     onClick={fireClick}

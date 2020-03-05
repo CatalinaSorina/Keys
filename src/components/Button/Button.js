@@ -4,27 +4,39 @@ import { combineStyle, removeKeysFromStyle } from "../../data/utils";
 import style from "styled-components";
 
 const ButtonStyle = style.button`
-    width: ${({ addMoreStyle }) => addMoreStyle.width};
-    height: ${({ addMoreStyle }) => addMoreStyle.height};
-    border: ${({ addMoreStyle }) => addMoreStyle.border};
-    border-radius: ${({ addMoreStyle }) => addMoreStyle.borderRadius};
-    background-color: ${({ addMoreStyle }) => addMoreStyle.backgroundColor};
-    box-shadow: ${({ addMoreStyle }) => addMoreStyle.boxShadow + addMoreStyle.boxShadowColor};
-    color: ${({ addMoreStyle }) => addMoreStyle.color};
-    outline: ${({ addMoreStyle }) => addMoreStyle.outline};
-    padding: ${({ addMoreStyle }) => addMoreStyle.padding};
+    ${({ addMoreStyle, styledComponent }) => `
+        width: ${addMoreStyle.width};
+        height: ${addMoreStyle.height};
+        border: ${addMoreStyle.border};
+        border-radius: ${addMoreStyle.borderRadius};
+        background-color: ${addMoreStyle.backgroundColor};
+        box-shadow: ${addMoreStyle.boxShadow + addMoreStyle.boxShadowColor};
+        color: ${addMoreStyle.color};
+        outline: ${addMoreStyle.outline};
+        padding: ${addMoreStyle.padding};
 
-    &:hover {
-        background:${({ addMoreStyle }) => addMoreStyle.hoverBackground};
-        color:${({ addMoreStyle }) => addMoreStyle.hoverColor};
-    }
-    &:active {
-        color:${({ addMoreStyle }) => addMoreStyle.activeColor};
-    }
+        &:hover {
+            background:${addMoreStyle.hoverBackground};
+            color:${addMoreStyle.hoverColor};
+        }
+
+        &:active {
+            color:${addMoreStyle.activeColor};
+        }
+
+        ${styledComponent && styledComponent}
+    `}
 `;
 
-const Button = ({ style, text, fireClick }) => (
-    <ButtonStyle style={removeKeysFromStyle(style, buttonDefaultStyle)} addMoreStyle={combineStyle(style, buttonDefaultStyle)} onClick={fireClick}>{text}</ButtonStyle>
+const Button = ({ style, styledComponent, text, fireClick }) => (
+    <ButtonStyle
+        style={removeKeysFromStyle(style, buttonDefaultStyle)}
+        addMoreStyle={combineStyle(style, buttonDefaultStyle)}
+        onClick={fireClick}
+        styledComponent={styledComponent}
+    >
+        {text}
+    </ButtonStyle>
 );
 
 export default Button;
