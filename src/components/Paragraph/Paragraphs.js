@@ -1,7 +1,7 @@
 import React from "react";
 import style from "styled-components";
 import { paragraphsDefaultStyle } from "./paragraphsDefaultStyle";
-import { combineStyle, removeKeysFromStyle } from "../../data/utils";
+import { combineStyle } from "../../data/utils";
 
 const ParagraphStyled = style.p`
     ${({ addStyle, styledComponent }) => `
@@ -13,17 +13,17 @@ const ParagraphStyled = style.p`
     `}
 `;
 
-const changeTextWithLineBreaks = (text, style, styledComponent) => text.match(/[^\r\n]+/g).map((line, i) =>
+const changeTextWithLineBreaks = (props) => props.text.match(/[^\r\n]+/g).map((line, i) =>
     <ParagraphStyled
         key={i + "line"}
-        style={removeKeysFromStyle(style, paragraphsDefaultStyle)}
-        addStyle={combineStyle(style, paragraphsDefaultStyle)}
-        styledComponent={styledComponent}
+        addStyle={combineStyle(props.changeDefaultStyle, paragraphsDefaultStyle)}
+        styledComponent={props.styledComponent}
+        {...props}
     >
         {line}
     </ParagraphStyled>
 )
 
-const Paragraphs = ({ text, style, styledComponent }) => <>{changeTextWithLineBreaks(text, style, styledComponent)}</>
+const Paragraphs = (props) => <>{changeTextWithLineBreaks(props)}</>
 
 export default Paragraphs;
