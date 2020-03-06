@@ -1,27 +1,27 @@
 import React from "react";
 import { buttonDefaultStyle } from "./buttonDefaultStyle";
-import { combineStyle, removeKeysFromStyle } from "../../data/utils";
+import { combineStyle } from "../../data/utils";
 import style from "styled-components";
 
 const ButtonStyle = style.button`
-    ${({ addMoreStyle, styledComponent }) => `
-        width: ${addMoreStyle.width};
-        height: ${addMoreStyle.height};
-        border: ${addMoreStyle.border};
-        border-radius: ${addMoreStyle.borderRadius};
-        background-color: ${addMoreStyle.backgroundColor};
-        box-shadow: ${addMoreStyle.boxShadow + addMoreStyle.boxShadowColor};
-        color: ${addMoreStyle.color};
-        outline: ${addMoreStyle.outline};
-        padding: ${addMoreStyle.padding};
+    ${({ addStyle, styledComponent }) => `
+        width: ${addStyle.width};
+        height: ${addStyle.height};
+        border: ${addStyle.border};
+        border-radius: ${addStyle.borderRadius};
+        background-color: ${addStyle.backgroundColor};
+        box-shadow: ${addStyle.boxShadow + addStyle.boxShadowColor};
+        color: ${addStyle.color};
+        outline: ${addStyle.outline};
+        padding: ${addStyle.padding};
 
         &:hover {
-            background:${addMoreStyle.hoverBackground};
-            color:${addMoreStyle.hoverColor};
+            background:${addStyle.hoverBackground};
+            color:${addStyle.hoverColor};
         }
 
         &:active {
-            color:${addMoreStyle.activeColor};
+            color:${addStyle.activeColor};
         }
 
         ${styledComponent && styledComponent}
@@ -30,7 +30,7 @@ const ButtonStyle = style.button`
 
 const Button = (props) => (
     <ButtonStyle
-        addMoreStyle={combineStyle(props.changeDefaultStyle, buttonDefaultStyle)}
+        addStyle={combineStyle(props.changeDefaultStyle, buttonDefaultStyle)}
         styledComponent={props.styledComponent}
         {...props}
     >

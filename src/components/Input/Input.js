@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { combineStyle, removeKeysFromStyle } from "../../data/utils";
+import { combineStyle } from "../../data/utils";
 import { inputDefaultStyle } from "./inputDefaultStyle";
 const InputStyled = styled.input`
   ${({ styledComponent, addStyle }) => `
@@ -35,8 +35,7 @@ const Input = (props) => {
   }
 
   return <InputStyled
-    style={removeKeysFromStyle(props.style, inputDefaultStyle)}
-    addStyle={combineStyle(props.style, inputDefaultStyle)}
+    addStyle={combineStyle(props.changeDefaultStyle, inputDefaultStyle)}
     styledComponent={props.styledComponent}
     onChange={handleOnChange}
     value={textState}
