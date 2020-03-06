@@ -49,14 +49,13 @@ export const WrapperStyle = styled.div`
   }}
 `;
 
-const Wrapper = ({ style, styledComponent, content }) => (
+const Wrapper = (props) => (
   <WrapperStyle
-    style={removeKeysFromStyle(style, wrapperDefaultStyle)}
-    addStyle={combineStyle(style, wrapperDefaultStyle)}
-    styledComponent={styledComponent}
-  >
-    {content}
-  </WrapperStyle>
+    style={removeKeysFromStyle(props.style, wrapperDefaultStyle)}
+    addStyle={combineStyle(props.style, wrapperDefaultStyle)}
+    styledComponent={props.styledComponent}
+    {...props}
+  />
 );
 
 export default Wrapper;
