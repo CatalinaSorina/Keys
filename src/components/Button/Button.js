@@ -28,14 +28,15 @@ const ButtonStyle = style.button`
     `}
 `;
 
-const Button = (props) => (
-    <ButtonStyle
-        addStyle={combineStyle(props.changeDefaultStyle, buttonDefaultStyle)}
-        styledComponent={props.styledComponent}
+const Button = (props) => {
+    const { changeDefaultStyle, styledComponent, text } = props;
+    return <ButtonStyle
+        addStyle={combineStyle(changeDefaultStyle, buttonDefaultStyle)}
+        styledComponent={styledComponent}
         {...props}
     >
-        {props.text}
+        {text}
     </ButtonStyle>
-);
+};
 
 export default Button;

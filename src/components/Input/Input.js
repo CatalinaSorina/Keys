@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { combineStyle } from "../../data/utils";
 import { inputDefaultStyle } from "./inputDefaultStyle";
+
 const InputStyled = styled.input`
   ${({ styledComponent, addStyle }) => `
     width: ${addStyle.width};
@@ -27,16 +28,17 @@ const InputStyled = styled.input`
 `
 
 const Input = (props) => {
-  const [textState, setTextState] = useState(props.text);
+  const { changeDefaultStyle, styledComponent, text, onChange } = props;
+  const [textState, setTextState] = useState(text);
 
   const handleOnChange = (e) => {
     setTextState(e.target.value);
-    props.onChange && typeof props.onChange === "function" && props.onChange();
+    onChange && typeof onChange === "function" && onChange();
   }
 
   return <InputStyled
-    addStyle={combineStyle(props.changeDefaultStyle, inputDefaultStyle)}
-    styledComponent={props.styledComponent}
+    addStyle={combineStyle(changeDefaultStyle, inputDefaultStyle)}
+    styledComponent={styledComponent}
     onChange={handleOnChange}
     value={textState}
     {...props}
