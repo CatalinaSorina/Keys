@@ -24,8 +24,9 @@ const App = () => (
   >
     <Tab
       openButtonText="see me"
-      buttonStyledComponent="align-items:center;background-color:red; color:white;"
+      // buttonStyledComponent="align-items:center;background-color:red; color:white;"
       tabStyledComponent="*::selection{background-color:rosybrown;}align-items:center;"
+      activeTab={true}
     >
       <header>Header, in work</header>
       <Input 

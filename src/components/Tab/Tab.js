@@ -3,9 +3,22 @@ import Button from "../Button/Button";
 import Wrapper from "../Wrapper/Wrapper";
 
 const Tab = (props) => {
-    const { openTabText, closeTabText, buttonStyledComponent, tabStyledComponent, tabAsModal, modalCloseButtonStyle, children } = props;
-    const [buttonText, setButtonText] = useState(openTabText ? openTabText : tabAsModal ? "open modal" : "open tab");
-    const [tabDisplay, setTabDisplay] = useState("none");
+    const {
+        openTabText,
+        closeTabText,
+        buttonStyledComponent,
+        tabStyledComponent,
+        tabAsModal,
+        modalCloseButtonStyle,
+        children,
+        activeTab,
+        activeTabStyled,
+        ...restProps
+    } = props;
+
+    const [active, setActive] = useState(activeTab);
+    const [buttonText, setButtonText] = useState(active ? (closeTabText ? closeTabText : "close tab") : openTabText ? openTabText : tabAsModal ? "open modal" : "open tab");
+    const [tabDisplay, setTabDisplay] = useState(active ? "flex" : "none");
 
     const openTab = () => {
         (openTabText) ?
@@ -18,9 +31,14 @@ const Tab = (props) => {
                     setButtonText("close tab")
                     : setButtonText("open tab")));
         tabDisplay === "none" ? setTabDisplay("flex") : setTabDisplay("none");
+        tabDisplay === "none" ? setActive(true) : setActive(false);
     }
 
     const buttonTabStyle = `
+        ${active && `
+            background-color: #FFDE9D;
+            ${activeTabStyled && activeTabStyled}
+        `}
         margin: 1rem;
         display: absolute;
     `
@@ -56,15 +74,16 @@ const Tab = (props) => {
     const closeModal = () => {
         openTabText ? setButtonText(openTabText) : setButtonText("open modal");
         setTabDisplay("none");
+        setActive(false);
     }
 
-    return (<>
+    return (<React.Fragment {...restProps}>
         <Button text={buttonText} styledComponent={buttonTabStyle + buttonStyledComponent} onClick={openTab} />
         <Wrapper styledComponent={wrapperTabStyle + tabStyledComponent} >
             {tabAsModal && <Button text="x" styledComponent={modalButtonStyle + modalCloseButtonStyle} onClick={() => closeModal()} />}
             {children}
         </Wrapper>
-    </>)
+    </React.Fragment>)
 }
 
 export default Tab;
