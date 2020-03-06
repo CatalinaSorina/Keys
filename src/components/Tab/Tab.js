@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 import Wrapper from "../Wrapper/Wrapper";
 
-const Tab = ({ content, openTabText, closeTabText, buttonStyle, buttonStyledComponent, tabStyle, tabStyledComponent, tabAsModal, modalCloseButtonStyle }) => {
+const Tab = (props) => {
+    const { openTabText, closeTabText, buttonStyledComponent, tabStyledComponent, tabAsModal, modalCloseButtonStyle, children } = props;
     const [buttonText, setButtonText] = useState(openTabText ? openTabText : tabAsModal ? "open modal" : "open tab");
     const [tabDisplay, setTabDisplay] = useState("none");
 
@@ -19,40 +20,38 @@ const Tab = ({ content, openTabText, closeTabText, buttonStyle, buttonStyledComp
         tabDisplay === "none" ? setTabDisplay("flex") : setTabDisplay("none");
     }
 
-    const buttonTabStyle = {
-        margin: "1rem",
-        display: "absolute"
-    }
+    const buttonTabStyle = `
+        margin: 1rem;
+        display: absolute;
+    `
 
-    const modalButtonStyle = {
-        position: "fixed",
-        top: "1rem",
-        right: "1rem",
-        width: "2.2rem"
-    }
+    const modalButtonStyle = `
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        width: 2.2rem;
+    `
 
-    const checkTabIsModal =
-        tabAsModal ? {
-            position: "fixed",
-            zIndex: 4,
-            top: "0.2rem",
-            width: "97.5%",
-            height: "95%",
-            alignItems: "center",
-            background: "rgba(255, 202, 212,0.8)"
-        } : null
-
-    const wrapperTabStyle = {
-        width: "90%",
-        height: "90%",
-        border: "0.2rem double #C08497",
-        backgroundColor: "#FFCAD4",
-        color: "#FFFFFF",
-        padding: "1rem",
-        textShadow: "0.1rem 0.1rem 0.2rem #C08497",
-        fontFamily: "cursive",
-        ...checkTabIsModal
-    }
+    const wrapperTabStyle = `
+        display: ${tabDisplay};
+        width: 90%;
+        height: 90%;
+        border: 0.2rem double #C08497;
+        background-color: #FFCAD4;
+        color: #FFFFFF;
+        padding: 1rem;
+        text-shadow: 0.1rem 0.1rem 0.2rem #C08497;
+        font-family: cursive;
+        ${tabAsModal && `
+            position: fixed;
+            z-index: 4;
+            top: 0.2rem;
+            width: 97.5%;
+            height: 95%;
+            align-items: center;
+            background: rgba(255, 202, 212,0.8);
+        `}
+    `
 
     const closeModal = () => {
         openTabText ? setButtonText(openTabText) : setButtonText("open modal");
@@ -60,15 +59,11 @@ const Tab = ({ content, openTabText, closeTabText, buttonStyle, buttonStyledComp
     }
 
     return (<>
-        <Button text={buttonText} style={{ ...buttonTabStyle, ...buttonStyle }} styledComponent={buttonStyledComponent} fireClick={openTab} />
-        <Wrapper
-            style={{ ...wrapperTabStyle, ...tabStyle, display: tabDisplay }}
-            styledComponent={tabStyledComponent}
-            content={<>
-                {tabAsModal && <Button text="x" style={{ ...modalButtonStyle, ...modalCloseButtonStyle }} fireClick={() => closeModal()} />}
-                {content}
-            </>}
-        />
+        <Button text={buttonText} styledComponent={buttonTabStyle + buttonStyledComponent} onClick={openTab} />
+        <Wrapper styledComponent={wrapperTabStyle + tabStyledComponent} >
+            {tabAsModal && <Button text="x" styledComponent={modalButtonStyle + modalCloseButtonStyle} onClick={() => closeModal()} />}
+            {children}
+        </Wrapper>
     </>)
 }
 
