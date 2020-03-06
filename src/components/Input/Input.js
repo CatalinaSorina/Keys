@@ -28,8 +28,8 @@ const InputStyled = styled.input`
 `
 
 const Input = (props) => {
-  const { changeDefaultStyle, styledComponent, text, onChange } = props;
-  const [textState, setTextState] = useState(text);
+  const { changeDefaultStyle, styledComponent, value, onChange, ...restProps } = props;
+  const [textState, setTextState] = useState(value);
 
   const handleOnChange = (e) => {
     setTextState(e.target.value);
@@ -41,7 +41,7 @@ const Input = (props) => {
     styledComponent={styledComponent}
     onChange={handleOnChange}
     value={textState}
-    {...props}
+    {...restProps}
   />
 };
 

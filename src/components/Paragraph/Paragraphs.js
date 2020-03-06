@@ -14,14 +14,14 @@ const ParagraphStyled = style.p`
 `;
 
 const changeTextWithLineBreaks = (props) => {
-    const { text, changeDefaultStyle, styledComponent } = props;
+    const { text, changeDefaultStyle, styledComponent, ...restProps } = props;
 
     return text.match(/[^\r\n]+/g).map((line, i) =>
         <ParagraphStyled
             key={i + "line"}
             addStyle={combineStyle(changeDefaultStyle, paragraphsDefaultStyle)}
             styledComponent={styledComponent}
-            {...props}
+            {...restProps}
         >
             {line}
         </ParagraphStyled>

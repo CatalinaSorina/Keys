@@ -48,11 +48,11 @@ export const WrapperStyle = styled.div`
 `;
 
 const Wrapper = (props) => {
-  const { changeDefaultStyle, styledComponent } = props;
+  const { changeDefaultStyle, styledComponent, ...restProps } = props;
   return <WrapperStyle
     addStyle={combineStyle(changeDefaultStyle, wrapperDefaultStyle)}
     styledComponent={styledComponent}
-    {...props}
+    {...restProps}
   />
 };
 

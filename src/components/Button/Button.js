@@ -29,11 +29,11 @@ const ButtonStyle = style.button`
 `;
 
 const Button = (props) => {
-    const { changeDefaultStyle, styledComponent, text } = props;
+    const { changeDefaultStyle, styledComponent, text, ...restProps } = props;
     return <ButtonStyle
         addStyle={combineStyle(changeDefaultStyle, buttonDefaultStyle)}
         styledComponent={styledComponent}
-        {...props}
+        {...restProps}
     >
         {text}
     </ButtonStyle>
