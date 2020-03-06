@@ -1,11 +1,10 @@
 import React from "react";
-import { combineStyle, removeKeysFromStyle } from "../../data/utils";
+import { combineStyle } from "../../data/utils";
 import { wrapperDefaultStyle } from "./wrapperDefaultStyle";
 import styled from "styled-components";
 
 export const WrapperStyle = styled.div`
-  ${({ addStyle, styledComponent }) => {
-    return `
+  ${({ addStyle, styledComponent }) => `
     display: ${addStyle.display};
     flex-direction: ${addStyle.flexDirection};
     align-items: ${addStyle.alignItems};
@@ -45,17 +44,16 @@ export const WrapperStyle = styled.div`
     }
 
     ${styledComponent && styledComponent}
-  `;
-  }}
+  `}
 `;
 
-const Wrapper = (props) => (
-  <WrapperStyle
-    style={removeKeysFromStyle(props.style, wrapperDefaultStyle)}
-    addStyle={combineStyle(props.style, wrapperDefaultStyle)}
-    styledComponent={props.styledComponent}
+const Wrapper = (props) => {
+  const { changeDefaultStyle, styledComponent } = props;
+  return <WrapperStyle
+    addStyle={combineStyle(changeDefaultStyle, wrapperDefaultStyle)}
+    styledComponent={styledComponent}
     {...props}
   />
-);
+};
 
 export default Wrapper;
