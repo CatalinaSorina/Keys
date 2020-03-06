@@ -5,6 +5,7 @@ import Input from "./components/Input/Input";
 import Button from "./components/Button/Button";
 import Tab from "./components/Tab/Tab";
 import Paragraphs from "./components/Paragraph/Paragraphs";
+import StyledComponent from "./components/StyledComponent/StyledComponent"
 
 const tabAsModalStyle = {
   buttonStyle: {
@@ -68,6 +69,13 @@ const App = () => (
         </>}
       />
       select me
+      <StyledComponent
+        componentType="button"
+        componentStyledComponent="background-color:transparent;height:3rem;border-radius:1rem;"
+        onClick={()=>console.log("Button styled working :D")}
+      >
+        test styled
+      </StyledComponent>
       <Input 
         placeholder="try me"
         styledComponent="color:red; &::placeholder {color:rgba(255, 0, 0,0.7);}"
