@@ -26,22 +26,21 @@ const InputStyled = styled.input`
   `}
 `
 
-const Input = ({ style, styledComponent, placeholder, text, fireChange, fireClick }) => {
-  const [textState, setTextState] = useState(text);
+const Input = (props) => {
+  const [textState, setTextState] = useState(props.text);
 
   const handleOnChange = (e) => {
     setTextState(e.target.value);
-    fireChange && typeof fireChange === "function" && fireChange();
+    props.onChange && typeof props.onChange === "function" && props.onChange();
   }
 
   return <InputStyled
-    style={removeKeysFromStyle(style, inputDefaultStyle)}
-    value={textState}
-    addStyle={combineStyle(style, inputDefaultStyle)}
-    styledComponent={styledComponent}
-    placeholder={placeholder}
+    style={removeKeysFromStyle(props.style, inputDefaultStyle)}
+    addStyle={combineStyle(props.style, inputDefaultStyle)}
+    styledComponent={props.styledComponent}
     onChange={handleOnChange}
-    onClick={fireClick}
+    value={textState}
+    {...props}
   />
 };
 
