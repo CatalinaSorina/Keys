@@ -28,14 +28,13 @@ const ButtonStyle = style.button`
     `}
 `;
 
-const Button = ({ style, styledComponent, text, fireClick }) => (
+const Button = (props) => (
     <ButtonStyle
-        style={removeKeysFromStyle(style, buttonDefaultStyle)}
-        addMoreStyle={combineStyle(style, buttonDefaultStyle)}
-        onClick={fireClick}
-        styledComponent={styledComponent}
+        addMoreStyle={combineStyle(props.changeDefaultStyle, buttonDefaultStyle)}
+        styledComponent={props.styledComponent}
+        {...props}
     >
-        {text}
+        {props.text}
     </ButtonStyle>
 );
 
