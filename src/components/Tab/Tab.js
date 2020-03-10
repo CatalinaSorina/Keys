@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import Wrapper from "../Wrapper/Wrapper";
-import { buttonTabStyle, modalButtonStyle, wrapperTabStyle } from "./Tab.styles";
+import { buttonTabStyle, modalButtonStyle, wrapperTabStyle, TabWrapper } from "./Tab.styles";
 
 const Tab = (props) => {
     const {
@@ -32,13 +32,13 @@ const Tab = (props) => {
         }
     }
 
-    return (<React.Fragment {...restProps}>
+    return (<TabWrapper {...restProps}>
         <Button text={buttonText} styledComponent={buttonStyledComponent + buttonTabStyle(active, activeButtonStyle)} onClick={setTab} />
         <Wrapper styledComponent={wrapperTabStyle(tabDisplay, tabAsModal) + tabStyledComponent} >
             {tabAsModal && <Button text="x" styledComponent={modalButtonStyle + modalCloseButtonStyle} onClick={() => setTab()} />}
             {children}
         </Wrapper>
-    </React.Fragment>)
+    </TabWrapper>)
 }
 
 export default Tab;
