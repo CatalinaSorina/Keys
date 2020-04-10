@@ -14,12 +14,13 @@ export const buttonTabStyle = (active, activeButtonStyle) => `
 
 export const wrapperTabStyle = (tabDisplay, tabAsModal) => `
     display: ${tabDisplay};
-    width: 98%;
-    height: 90%;
+    position:absolute;
+    width: 96%;
+    height: 85%;
     border: 0.2rem double #C08497;
     background-color: #FFCAD4;
     color: #FFFFFF;
-    padding: 1rem;
+    padding: 2% 1%;
     margin-top: 0.5rem;
     text-shadow: 0.1rem 0.1rem 0.2rem #C08497;
     font-family: cursive;
