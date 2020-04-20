@@ -1,7 +1,4 @@
-import React, { useState } from "react";
 import styled from "styled-components";
-import { combineStyle } from "../../data/utils";
-import { inputDefaultStyle } from "./inputDefaultStyle";
 
 const InputStyled = styled.input`
   ${({ styledComponent, addStyle }) => `
@@ -27,22 +24,4 @@ const InputStyled = styled.input`
   `}
 `
 
-const Input = (props) => {
-  const { changeDefaultStyle, styledComponent, value, onChange, ...restProps } = props;
-  const [textState, setTextState] = useState(value);
-
-  const handleOnChange = (e) => {
-    setTextState(e.target.value);
-    onChange && typeof onChange === "function" && onChange();
-  }
-
-  return <InputStyled
-    addStyle={combineStyle(changeDefaultStyle, inputDefaultStyle)}
-    styledComponent={styledComponent}
-    onChange={handleOnChange}
-    value={textState}
-    {...restProps}
-  />
-};
-
-export default Input;
+export default InputStyled;
