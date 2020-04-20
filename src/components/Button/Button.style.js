@@ -1,12 +1,8 @@
-import React from "react";
-import { buttonDefaultStyle } from "./buttonDefaultStyle";
-import { combineStyle } from "../../data/utils";
-import style from "styled-components";
+import style from 'styled-components';
 
 const ButtonStyle = style.button`
     ${({ addStyle, styledComponent }) => `
         width: ${addStyle.width};
-        height: ${addStyle.height};
         border: ${addStyle.border};
         border-radius: ${addStyle.borderRadius};
         background-color: ${addStyle.backgroundColor};
@@ -28,15 +24,4 @@ const ButtonStyle = style.button`
     `}
 `;
 
-const Button = (props) => {
-    const { changeDefaultStyle, styledComponent, text, ...restProps } = props;
-    return <ButtonStyle
-        addStyle={combineStyle(changeDefaultStyle, buttonDefaultStyle)}
-        styledComponent={styledComponent}
-        {...restProps}
-    >
-        {text}
-    </ButtonStyle>
-};
-
-export default Button;
+export default ButtonStyle;
