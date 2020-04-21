@@ -44,6 +44,9 @@ const App = () => (
         Godard enamel pin vape synth va"
         styledComponent="&:hover{color:blue;}"
       />
+      <Paragraphs text="Lorem ipsum dolo"
+        styledComponent="&:hover{color:red;}"
+      />
     </main>
     <footer>bottom</footer>
   </Tab>
