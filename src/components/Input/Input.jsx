@@ -1,6 +1,7 @@
 // @flow
 import React, { useState } from 'react';
 import InputStyled from './Input.style';
+import styled from 'styled-components';
 
 type InputProps = {
   width: string,
@@ -17,7 +18,7 @@ type InputProps = {
   textAlign: string,
   placeholderColor: string,
   placeholderTextShadow: string,
-  styledComponent?: Object,
+  styledComponent?: styled,
   text?: string | number,
   onChange?: Function,
   type: string,

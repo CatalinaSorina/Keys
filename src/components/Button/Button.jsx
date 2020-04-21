@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import ButtonStyle from './Button.style';
+import styled from 'styled-components';
 
 type ButtonProps = {
   width: string,
@@ -15,7 +16,7 @@ type ButtonProps = {
   padding: string,
   hoverBackground: string,
   hoverColor: string,
-  styledComponent?: Object,
+  styledComponent?: styled,
   text: string
 };
 
