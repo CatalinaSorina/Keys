@@ -1,4 +1,5 @@
-export const moveOn = (position) => {
+// @flow
+export const moveOn = (position:string):string => {
     switch (position) {
         case "TOP1": return "1/3";
         case "TOP2": return "2/3";
@@ -24,7 +25,7 @@ export const moveOn = (position) => {
     }
 }
 
-export const setColors = (colors) => {
+export const setColors = (colors:Array<string> | string):Array<string> => {
     if (typeof colors === "string") {
         switch (colors) {
             case "rainbow": return ["#FD5959", "#FD9059", "#FDE259", "#8FE36A", "#6AE3BE", "#59C1FD", "#6559FD", "#9F59FD"];
@@ -40,13 +41,4 @@ export const setColors = (colors) => {
     }    
 }
 
-export const selectFrom = (colors,index) => colors.length>index?index:Math.abs(index%colors.length);
-
-export const setCircleColor=(color, colors, unicolor, colorIndex)=>{
-    if(color)
-        return color
-    else if(unicolor)
-        return colors[0]
-    else
-        return colors[selectFrom(colors,colorIndex)]
-}
+export const selectFrom = (colors:Array<string>,index:number) => colors.length>index?index:Math.abs(index%colors.length);

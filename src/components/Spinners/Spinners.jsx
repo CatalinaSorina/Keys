@@ -32,14 +32,16 @@ const Spinners = () => {
           <Cross colors="green" unicolor />
           <Cross colors="blue" unicolor />
           <Cross colors="blue" />
+          <Cross colors={['red', 'yellow', 'blue', 'green']} />
         </div>
         <div style={{ display: 'flex' }}>
           <Cross colors="peach" />
-          <Cross colors="peach" unicolor />
+          <Cross color="white" />
           <Cross colors="rainbow" />
-          <Cross colors="rainbow" unicolor />
+          <Cross colors="rainbow" unicolor /> 
           <Cross colors={["red","yellow","blue","green","black","purple","orange","lightgreen"]} unicolor />
-          <Cross colors={["red","yellow","blue","green"]} />
+          <Cross color="blue" />
+          <Cross colors="peach" unicolor />
         </div>
       </Wrapper>
     </Wrapper>

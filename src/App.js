@@ -12,7 +12,7 @@ import StyledComponent from "./components/StyledComponent/StyledComponent";
 
 // const tabAsModalStyle = {
 //   buttonStyle: `
-//     position: fixed;
+//     position: fixed;                                                                                                                                                                                                                                                                                           
 //     left: 1rem;
 //   `,
 //   tabStyle: `
@@ -27,7 +27,7 @@ import StyledComponent from "./components/StyledComponent/StyledComponent";
 //   // background: #C08497;
 // `
 
-const App = () => (
+const App = () => (<>
   <Tab
     // tabAsModal={true}
     openButtonText="see me"
@@ -61,6 +61,8 @@ const App = () => (
     </main>
     <footer>bottom</footer>
   </Tab>
+    {/* <Spinners /> */}
+  </>
   /* <Wrapper
       styledComponent="width:98vw;height:96vh;align-items:center;padding:1rem;&::selection{background-color:#7797B7;}"
     >
