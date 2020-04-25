@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { TabHolderProps } from './TabHolder';
 
-const TabHolderStyled = styled.input`
-  ${({ display: string, inline: boolean, styledComponent: styled }): string => `
+const TabHolderStyled = styled.div`
+  ${({ display, inline, styledComponent }:TabHolderProps): string => `
         display: ${display};
         flex-direction: ${inline ? 'row' : 'column'}
         
@@ -10,4 +10,4 @@ const TabHolderStyled = styled.input`
     `}
 `;
 
-export default TabHolder;
+export default TabHolderStyled;

@@ -6,6 +6,7 @@ import Spinners from './components/Spinners/Spinners';
 import Wrapper from './components/Wrapper/Wrapper';
 import Input from './components/Input/Input';
 import Button from './components/Button/Button';
+// import TabHolder from './components/TabHolder/TabHolder';
 // import StyledComponent from './components/StyledComponent/StyledComponent';
 
 const App = () => (
