@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
 import ButtonStyle from './Button.style';
-import styled from 'styled-components';
+import type styled from 'styled-components';
 
 type ButtonProps = {
+  display: string,
   width: string,
   border: string,
   borderRadius: string,
@@ -16,8 +17,8 @@ type ButtonProps = {
   padding: string,
   hoverBackground: string,
   hoverColor: string,
+  text: string,
   styledComponent?: styled,
-  text: string
 };
 
 const Button = (props: ButtonProps) => {
@@ -34,8 +35,8 @@ const Button = (props: ButtonProps) => {
     padding,
     hoverBackground,
     hoverColor,
+    text,
     styledComponent,
-    text
   } = props;
   return (
     <ButtonStyle
@@ -51,7 +52,7 @@ const Button = (props: ButtonProps) => {
         outline,
         padding,
         hoverBackground,
-        hoverColor
+        hoverColor,
       }}
       styledComponent={styledComponent}
       {...(props: any)}

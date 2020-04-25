@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
-import styled from 'styled-components';
+import type styled from 'styled-components';
+import Component from './StyledComponent.styles';
 
 type StyledComponentProps = {
   type: string,
@@ -9,12 +10,13 @@ type StyledComponentProps = {
 
 const StyledComponent = (props: StyledComponentProps) => {
   const { type, styledComponent } = props;
-
-  const Component = styled(type)`
-    ${styledComponent && styledComponent}
-  `;
-
-  return <Component {...(props: any)} />;
+  return (
+    <Component
+      type={type}
+      styledComponent={styledComponent}
+      {...(props: any)}
+    />
+  );
 };
 
 export default StyledComponent;

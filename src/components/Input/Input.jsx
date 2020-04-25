@@ -1,7 +1,7 @@
 // @flow
 import React, { useState } from 'react';
 import InputStyled from './Input.style';
-import styled from 'styled-components';
+import type styled from 'styled-components';
 
 type InputProps = {
   width: string,
@@ -18,11 +18,11 @@ type InputProps = {
   textAlign: string,
   placeholderColor: string,
   placeholderTextShadow: string,
-  styledComponent?: styled,
   text?: string | number,
   onChange?: Function,
   type: string,
-  value?: any
+  value?: any,
+  styledComponent?: styled,
 };
 
 const Input = (props: InputProps) => {
@@ -41,11 +41,11 @@ const Input = (props: InputProps) => {
     textAlign,
     placeholderColor,
     placeholderTextShadow,
-    styledComponent,
     text,
     onChange,
     type,
-    value
+    value,
+    styledComponent,
   } = props;
   const [textState, setTextState] = useState(text);
 
@@ -73,8 +73,8 @@ const Input = (props: InputProps) => {
         placeholderTextShadow,
       }}
       styledComponent={styledComponent}
-      onChange={(type==="text")?handleOnChange:onChange}
-      value={(type==="text")?textState:value}
+      onChange={type === 'text' ? handleOnChange : onChange}
+      value={type === 'text' ? textState : value}
       {...(props: any)}
     />
   );
@@ -95,7 +95,7 @@ Input.defaultProps = {
   textAlign: 'center',
   placeholderColor: '#FFCAD4',
   placeholderTextShadow: '0 0.01rem 0.05rem black',
-  type:"text"
+  type: 'text',
 };
 
 export default Input;

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import ParagraphStyled from './Paragraphs.style';
-import styled from 'styled-components';
+import type styled from 'styled-components';
 
 type ParagraphsProps = {
   indent: string,
