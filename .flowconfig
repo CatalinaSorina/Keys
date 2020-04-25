@@ -1,8 +1,8 @@
 [ignore]
-.*/node_modules/.*
-.*/src/serviceWorker\.js
-.*/src/index\.js
-.*\.test\.js
+; .*/node_modules/.*
+; .*/src/serviceWorker\.js
+; .*/src/index\.js
+; .*\.test\.js
 
 [include]
 
@@ -11,5 +11,6 @@
 [lints]
 
 [options]
+; all=true
 
 [strict]

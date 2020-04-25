@@ -1,7 +1,7 @@
 //@flow
 import React from 'react';
 import styled from 'styled-components';
-import TabHolderStyled from './Tab/TabHolder.styles';
+import TabHolderStyled from './TabHolder.styles';
 
 export type TabHolderProps = {
   display: string,

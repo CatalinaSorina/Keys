@@ -6,7 +6,7 @@ const TabHolderStyled = styled.input`
         display: ${display};
         flex-direction: ${inline ? 'row' : 'column'}
         
-        ${styledComponent && styledComponent}
+        ${styledComponent ? styledComponent : ''}
     `}
 `;
 
