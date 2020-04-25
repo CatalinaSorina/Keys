@@ -5,13 +5,13 @@ import Paragraphs from './components/Paragraph/Paragraphs';
 import Spinners from './components/Spinners/Spinners';
 import Wrapper from './components/Wrapper/Wrapper';
 import Input from './components/Input/Input';
-// import Button from './components/Button/Button';
+import Button from './components/Button/Button';
 // import StyledComponent from './components/StyledComponent/StyledComponent';
 
 const App = () => (
-  <Wrapper alignItems="center">
-    <Tab
-      tabAsModal={true}
+  <Wrapper alignItems="center" fontFamily="Arial">
+    {/* <Tab
+      // tabAsModal={true}
       openTabText="see me"
       // buttonStyledComponent="align-items:center;background-color:red; color:white;"
       // tabStyledComponent="*::selection{background-color:rosybrown;}align-items:center;"
@@ -19,8 +19,8 @@ const App = () => (
     >
       <header>Header, in work</header>
       <Spinners />
+        <Button text="hei" />
       {
-        // <Button text="hei" />
         // <Input text="Test text" />
         // <StyledComponent
         //   type="button"
@@ -49,7 +49,7 @@ const App = () => (
         />
       </main>
       <footer>bottom</footer>
-    </Tab>
+    </Tab> */}
     select me
     <Input
       placeholder="try me"
