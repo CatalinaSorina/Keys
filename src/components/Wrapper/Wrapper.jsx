@@ -3,7 +3,7 @@ import React from 'react';
 import WrapperStyle from './Wrapper.styles';
 import type styled from 'styled-components';
 
-type WrapperStyleProps = {
+export type WrapperProps = {
   display: string,
   position: string,
   flexDirection: string,
@@ -42,7 +42,7 @@ type WrapperStyleProps = {
   styledComponent?: styled,
 };
 
-const Wrapper = (props: WrapperStyleProps): WrapperStyle => {
+const Wrapper = (props: WrapperProps): WrapperStyle => {
   const {
     display,
     position,

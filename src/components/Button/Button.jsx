@@ -2,8 +2,9 @@
 import React from 'react';
 import ButtonStyle from './Button.style';
 import type styled from 'styled-components';
+import type { Node } from 'react';
 
-type ButtonProps = {
+export type ButtonProps = {
   display: string,
   position: string,
   top: string,
@@ -13,6 +14,7 @@ type ButtonProps = {
   width: string,
   border: string,
   borderRadius: string,
+  background?: string,
   backgroundColor: string,
   boxShadow: string,
   boxShadowColor: string,
@@ -26,6 +28,7 @@ type ButtonProps = {
   hoverColor: string,
   text: string,
   styledComponent?: styled,
+  children?: Node,
 };
 
 const Button = (props: ButtonProps) => {
@@ -39,6 +42,7 @@ const Button = (props: ButtonProps) => {
     width,
     border,
     borderRadius,
+    background,
     backgroundColor,
     boxShadow,
     boxShadowColor,
@@ -52,6 +56,7 @@ const Button = (props: ButtonProps) => {
     hoverColor,
     text,
     styledComponent,
+    children,
   } = props;
   return (
     <ButtonStyle
@@ -65,6 +70,7 @@ const Button = (props: ButtonProps) => {
         width,
         border,
         borderRadius,
+        background,
         backgroundColor,
         boxShadow,
         boxShadowColor,
@@ -80,7 +86,7 @@ const Button = (props: ButtonProps) => {
       styledComponent={styledComponent}
       {...(props: any)}
     >
-      {text}
+      {children ? children : text}
     </ButtonStyle>
   );
 };

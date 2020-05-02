@@ -11,7 +11,9 @@ const ButtonStyle = style.button`
         width: ${addStyle.width};
         border: ${addStyle.border};
         border-radius: ${addStyle.borderRadius};
-        background-color: ${addStyle.backgroundColor};
+        ${addStyle.background
+            ? `background: ${addStyle.background};`
+            : `background-color: ${addStyle.backgroundColor};`}
         box-shadow: ${addStyle.boxShadow + addStyle.boxShadowColor};
         color: ${addStyle.color};
         text-shadow:${addStyle.textShadow};

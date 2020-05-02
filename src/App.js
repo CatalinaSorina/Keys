@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import Tab from './components/Tab/Tab';
-import Paragraphs from './components/Paragraph/Paragraphs';
-import Spinners from './components/Spinners/Spinners';
+// import Tab from './components/Tab/Tab';
+// import Paragraphs from './components/Paragraph/Paragraphs';
+// import Spinners from './components/Spinners/Spinners';
 import Wrapper from './components/Wrapper/Wrapper';
 import Input from './components/Input/Input';
-import Button from './components/Button/Button';
+// import Button from './components/Button/Button';
+import Modal from './components/Modal/Modal';
 // import TabHolder from './components/TabHolder/TabHolder';
 // import StyledComponent from './components/StyledComponent/StyledComponent';
 
@@ -51,6 +52,15 @@ const App = () => (
       </main>
       <footer>bottom</footer>
     </Tab> */}
+    <Modal
+      openModalText="open MEEE"
+      buttonStyle={{ background: 'lightgreen' }}
+      closeButtonStyle={{ width: '5rem', background: 'red' }}
+      modalStyle={{ backgroundColor: 'rgba(96,159,119,0.9)', color: 'pink' }}
+      closeModalText="close this modal"
+    >
+      <p>Hei</p>
+    </Modal>
     select me
     <Input
       placeholder="try me"
