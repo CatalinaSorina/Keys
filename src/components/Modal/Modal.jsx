@@ -25,35 +25,29 @@ const Modal = ({
   modalStyle,
   children,
 }: ModalProps) => {
-  const [display, setDisplay] = useState(false);
-  const displayModal =
-    modalStyle &&
-    modalStyle.hasOwnProperty('display') &&
-    modalStyle.display !== 'none'
-      ? modalStyle.display
-      : 'flex';
+  const [show, setShow] = useState(false);
 
-  const closeButtonStyleCombined = combineStyle(
-    closeButtonStyle,
-    closeButtonDefaultStyle
-  );
+  const closeButtonStyleCombined = combineStyle(closeButtonStyle,closeButtonDefaultStyle);
   const modalStyleCombined = combineStyle(modalStyle, modalDefaultStyle);
+
+  const { display, ...restModalStyleCombined } = modalStyleCombined;
+  const displayModal = display !== 'none' ? display : 'flex';
 
   return (
     <React.Fragment>
       <Button
         text={openModalText}
         {...buttonStyle}
-        onClick={() => setDisplay(true)}
+        onClick={() => setShow(true)}
       />
       <Wrapper
-        {...modalStyleCombined}
-        display={display ? displayModal : 'none'}
+        display={show ? displayModal : 'none'}
+        {...restModalStyleCombined}
       >
         <Button
           text={closeModalText ? closeModalText : 'x'}
           {...closeButtonStyleCombined}
-          onClick={() => setDisplay(false)}
+          onClick={() => setShow(false)}
         />
         {children}
       </Wrapper>

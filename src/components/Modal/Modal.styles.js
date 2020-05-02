@@ -6,6 +6,7 @@ export const closeButtonDefaultStyle = {
 };
 
 export const modalDefaultStyle = {
+  display: 'flex',
   position: 'fixed',
   top: '0',
   left: '0',
