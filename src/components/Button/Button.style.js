@@ -9,7 +9,12 @@ const ButtonStyle = style.button`
         left: ${addStyle.left};
         bottom: ${addStyle.bottom};
         width: ${addStyle.width};
-        border: ${addStyle.border};
+        ${addStyle.border ? 
+            `border: ${addStyle.border};`
+            : `border-width: ${addStyle.borderWidth};
+            border-style: ${addStyle.borderStyle};
+            border-color: ${addStyle.borderColor};
+        `}
         border-radius: ${addStyle.borderRadius};
         ${addStyle.background
             ? `background: ${addStyle.background};`
