@@ -23,6 +23,9 @@ type WrapperStyleProps = {
     borderColor: string,
     boxShadow: string,
     background?: string,
+    backgroundImage: string,
+    backgroundPosition: string,
+    backgroundSize: string,
     backgroundColor: string,
     overflow: string,
     cursor: string,
@@ -72,6 +75,9 @@ export const WrapperStyle = styled.div`
     ${addStyle.background
         ? `background: ${addStyle.background};`
         : `background-color: ${addStyle.backgroundColor};`}
+    background-image: ${addStyle.backgroundImage};
+    background-position: ${addStyle.backgroundPosition};
+    background-size: ${addStyle.backgroundSize};
     overflow: ${addStyle.overflow};
     cursor: ${addStyle.cursor};
     z-index: ${addStyle.zIndex};

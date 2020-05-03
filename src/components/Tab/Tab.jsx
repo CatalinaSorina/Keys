@@ -16,6 +16,7 @@ type TabProps = {
   activeButtonStyle?: ButtonProps,
   tabStyle: WrapperProps,
   children: Node,
+  tabHolderAction: Function,
 };
 
 const Tab = ({
@@ -26,6 +27,7 @@ const Tab = ({
   activeButtonStyle,
   tabStyle,
   children,
+  tabHolderAction,
 }: TabProps) => {
   const [active, setActive] = useState(activeTab);
 
@@ -41,12 +43,17 @@ const Tab = ({
     <React.Fragment>
       <Button
         {...buttonCurrentStyle}
-        onClick={() => setActive(!active)}
+        onClick={() => {setActive(!active);tabHolderAction();}}
         text={active && closeTabText ? closeTabText : openTabText}
       />
-      <Wrapper display={active ? displayTab : 'none'} {...restTabStyleCombined}>
-        {children}
-      </Wrapper>
+      {!tabHolderAction && (
+        <Wrapper
+          display={active ? displayTab : 'none'}
+          {...restTabStyleCombined}
+        >
+          {children}
+        </Wrapper>
+      )}
     </React.Fragment>
   );
 };
@@ -54,7 +61,8 @@ const Tab = ({
 Tab.defaultProps = {
   openTabText: 'Open',
   activeTab: false,
-  buttonStyle: {}
+  buttonStyle: {},
+  withTabHolder: false,
 };
 
 export default Tab;

@@ -5,11 +5,21 @@ import Paragraphs from './components/Paragraph/Paragraphs';
 import Spinners from './components/Spinners/Spinners';
 import Wrapper from './components/Wrapper/Wrapper';
 import Button from './components/Button/Button';
-// import TabHolder from './components/TabHolder/TabHolder';
+import TabHolder from './components/TabHolder/TabHolder';
 
 const App = () => (
   <Wrapper alignItems="center" fontFamily="Arial">
-    <Tab
+  <TabHolder activeTabIndex={1} >
+    <Tab openTabText="See me">
+      shfnaiskn 
+      asfjasnkfm
+    </Tab>
+    <Tab>
+      shfnaiskn 
+      <input placeholder="empty" />
+    </Tab>
+  </TabHolder>
+    {/* <Tab
       openTabText="see me"
     >
       <header>Header, in work</header>
@@ -28,7 +38,7 @@ const App = () => (
         />
       </main>
       <footer>bottom</footer>
-    </Tab>
+    </Tab> */}
   </Wrapper>
 );
 

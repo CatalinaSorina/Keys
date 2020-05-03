@@ -1,30 +1,69 @@
 //@flow
-import React from 'react';
-import type styled from 'styled-components';
-import TabHolderStyled from './TabHolder.styles';
+import React, { useState, cloneElement } from 'react';
+import type { Node } from 'react';
+import Wrapper from '../Wrapper/Wrapper';
+import type { WrapperProps } from '../Wrapper/Wrapper';
+import { combineStyle } from '../../data/utils';
+import { tabHolderDefaultStyle,tabDefaultStyle,backgroundDefaultStyle } from './TabHolder.styles';
 
 export type TabHolderProps = {
-  display: string,
-  inline: boolean,
-  holderStyledComponent?: styled,
+  activeTabIndex: number,
+  removeInline: boolean,
+  tabHolderStyle?: WrapperProps,
+  backgroundStyle?: WrapperProps,
+  children: Node,
 };
 
-const TabHolder = (props: TabHolderProps): TabHolderStyled => {
-  const { display, inline, holderStyledComponent } = props;
+const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundStyle, children }: TabHolderProps) => {
+  const [activeTab, setActiveTab] = useState(activeTabIndex);
+
+  const tabHolderStyleCombined = combineStyle(tabHolderStyle,tabHolderDefaultStyle);
+  const {display, flexDirection, width, height, ...restTabHolderStyle} = tabHolderStyleCombined;
+  const backgroundStyleCombined = combineStyle(backgroundStyle,backgroundDefaultStyle);
+  const tabDefaultStyleCombined = combineStyle(tabDefaultStyle,tabDefaultStyle);
+
+  const tabs = children ? React.Children.map(children, (tab, i) => {
+    if (tab.type.name === 'Tab') {
+      return i === activeTab
+        ? cloneElement(tab, { tabHolderAction: ()=>setActiveTab(-1) })
+        : cloneElement(tab, { tabHolderAction: ()=>setActiveTab(i) });
+    }
+  }):[];
 
   return (
-    <TabHolderStyled
-      display={display}
-      inline={inline}
-      styledComponent={holderStyledComponent}
-      {...(props: any)}
-    />
+    <Wrapper
+      display='flex'
+      flexDirection={removeInline ? 'row':'column' }
+      {...backgroundStyleCombined}
+    >
+      <Wrapper
+        display='flex'
+        flexDirection={removeInline ? 'column':'row' }
+        width={ tabHolderStyle && tabHolderStyle.hasOwnProperty('width')?
+          tabHolderStyle.width
+          :(removeInline ? 'auto':'98%') 
+        }
+        height={ tabHolderStyle && tabHolderStyle.hasOwnProperty('height')? 
+          tabHolderStyle.height
+          :(removeInline ? '95%':'auto')
+        }
+        {...restTabHolderStyle}
+      >
+        {tabs.map(tab=>tab)}
+      </Wrapper>
+      
+      {activeTab !== -1 && 
+      <Wrapper {...combineStyle(tabs[activeTab].props.tabStyle,tabDefaultStyle)}>
+        {tabs[activeTab].props.children}
+      </Wrapper>}
+        
+    </Wrapper>
   );
 };
 
 TabHolder.defaultProps = {
-  display: 'flex',
-  inline: false,
+  activeTabIndex: 0,
+  inline: true,
 };
 
 export default TabHolder;
