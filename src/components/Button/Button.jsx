@@ -106,7 +106,7 @@ const Button = (props: ButtonProps) => {
 Button.defaultProps = {
   display: 'block',
   position: '',
-  margin: '0 0.2rem',
+  margin: '0.2rem',
   top: '',
   right: '',
   left: '',

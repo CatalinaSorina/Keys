@@ -8,8 +8,10 @@ import Button from './components/Button/Button';
 import TabHolder from './components/TabHolder/TabHolder';
 
 const App = () => {
-  return <Wrapper alignItems="center" fontFamily="Arial">
-  <TabHolder activeTabIndex={0} removeInline>
+  return <Wrapper alignItems="center" fontFamily="Arial" backgroundColor='orange'>
+  <TabHolder activeTabIndex={0} 
+      backgroundStyle={{border:'0.1rem solid black'}}
+      removeDefaultBackground>
     <Tab openTabText='See me'>
       shfnaiskn 
       asfjasnkfm

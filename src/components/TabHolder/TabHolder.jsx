@@ -4,7 +4,7 @@ import type { Node } from 'react';
 import Wrapper from '../Wrapper/Wrapper';
 import type { WrapperProps } from '../Wrapper/Wrapper';
 import { combineStyle } from '../../data/utils';
-import { tabHolderDefaultStyle,tabDefaultStyle,backgroundDefaultStyle } from './TabHolder.styles';
+import { tabHolderDefaultStyle,tabDefaultStyle,backgroundDefaultStyle,removeBackground } from './TabHolder.styles';
 
 export type TabHolderProps = {
   activeTabIndex: number,
@@ -12,14 +12,15 @@ export type TabHolderProps = {
   tabHolderStyle?: WrapperProps,
   backgroundStyle?: WrapperProps,
   children: Node,
+  removeDefaultBackground: boolean,
 };
 
-const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundStyle, children }: TabHolderProps) => {
+const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundStyle, children, removeDefaultBackground }: TabHolderProps) => {
   const [activeTab, setActiveTab] = useState(activeTabIndex);
 
   const tabHolderStyleCombined = combineStyle(tabHolderStyle,tabHolderDefaultStyle);
   const {display, flexDirection, width, height, ...restTabHolderStyle} = tabHolderStyleCombined;
-  const backgroundStyleCombined = combineStyle(backgroundStyle,backgroundDefaultStyle);
+  const backgroundStyleCombined = removeDefaultBackground? combineStyle(backgroundStyle,removeBackground):combineStyle(backgroundStyle,backgroundDefaultStyle);
   const tabDefaultStyleCombined = combineStyle(tabDefaultStyle,tabDefaultStyle);
 
   const tabs = children ? React.Children.map(children, (tab, i) => {

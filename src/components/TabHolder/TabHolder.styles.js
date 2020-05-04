@@ -39,3 +39,11 @@ export const backgroundDefaultStyle = {
   padding: '1vh 1vw',
   border: 'none',
 };
+
+export const removeBackground = {
+  width: '',
+  height: '',
+  border:'none',
+  boxShadow: 'none',
+  backgroundColor: 'transparent',
+}
