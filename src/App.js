@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Tab from './components/Tab/Tab';
 import Paragraphs from './components/Paragraph/Paragraphs';
@@ -7,16 +7,21 @@ import Wrapper from './components/Wrapper/Wrapper';
 import Button from './components/Button/Button';
 import TabHolder from './components/TabHolder/TabHolder';
 
-const App = () => (
-  <Wrapper alignItems="center" fontFamily="Arial">
-  <TabHolder activeTabIndex={1} >
-    <Tab openTabText="See me">
+const App = () => {
+  return <Wrapper alignItems="center" fontFamily="Arial">
+  <TabHolder activeTabIndex={0} removeInline>
+    <Tab openTabText='See me'>
       shfnaiskn 
       asfjasnkfm
     </Tab>
-    <Tab>
+    <Tab
+      closeTabText='Close'
+      buttonStyle={{backgroundColor:'lightgreen',borderColor:'green',color:'green',hoverBackground:'green',hoverColor:'lightgreen'}}
+      activeButtonStyle={{backgroundColor:'green',borderColor:'green',color:'lightgrey',hoverBackground:'green',hoverColor:'lightgreen'}}
+      tabStyle={{backgroundColor:'lightgreen',border:'0.1rem solid green',textShadow:'none',color:'green',justifyContent:'center',alignItems:'center'}}
+    >
       shfnaiskn 
-      <input placeholder="empty" />
+      <Button text='ok' />
     </Tab>
   </TabHolder>
     {/* <Tab
@@ -40,6 +45,6 @@ const App = () => (
       <footer>bottom</footer>
     </Tab> */}
   </Wrapper>
-);
+};
 
 export default App;

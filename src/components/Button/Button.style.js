@@ -4,6 +4,7 @@ const ButtonStyle = style.button`
     ${({ addStyle, styledComponent }) => `
         display: ${addStyle.display};
         position: ${addStyle.position};
+        margin: ${addStyle.margin};
         top: ${addStyle.top};
         right: ${addStyle.right};
         left: ${addStyle.left};

@@ -25,8 +25,8 @@ const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundSty
   const tabs = children ? React.Children.map(children, (tab, i) => {
     if (tab.type.name === 'Tab') {
       return i === activeTab
-        ? cloneElement(tab, { tabHolderAction: ()=>setActiveTab(-1) })
-        : cloneElement(tab, { tabHolderAction: ()=>setActiveTab(i) });
+        ? cloneElement(tab, { setActiveTab: ()=>setActiveTab(-1), activeTab:true, withTabHolder:true })
+        : cloneElement(tab, { setActiveTab: ()=>setActiveTab(i), activeTab:false, withTabHolder:true });
     }
   }):[];
 

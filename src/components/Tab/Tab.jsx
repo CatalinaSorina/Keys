@@ -16,7 +16,8 @@ type TabProps = {
   activeButtonStyle?: ButtonProps,
   tabStyle: WrapperProps,
   children: Node,
-  tabHolderAction: Function,
+  setActiveTab?: Function,
+  withTabHolder: boolean,
 };
 
 const Tab = ({
@@ -27,11 +28,13 @@ const Tab = ({
   activeButtonStyle,
   tabStyle,
   children,
-  tabHolderAction,
+  setActiveTab,
+  withTabHolder,
 }: TabProps) => {
   const [active, setActive] = useState(activeTab);
 
-  const buttonCurrentStyle = active
+  const checkActiveTab = setActiveTab? activeTab:active;
+  const buttonCurrentStyle = checkActiveTab
     ? combineStyle(activeButtonStyle, activeButtonDefaultStyle)
     : buttonStyle;
   const tabStyleCombined = combineStyle(tabStyle, tabDefaultStyle);
@@ -43,10 +46,10 @@ const Tab = ({
     <React.Fragment>
       <Button
         {...buttonCurrentStyle}
-        onClick={() => {setActive(!active);tabHolderAction();}}
-        text={active && closeTabText ? closeTabText : openTabText}
+        onClick={() => setActiveTab ? setActiveTab():setActive(!active) }
+        text={checkActiveTab && closeTabText ? closeTabText : openTabText}
       />
-      {!tabHolderAction && (
+      {!withTabHolder && (
         <Wrapper
           display={active ? displayTab : 'none'}
           {...restTabStyleCombined}

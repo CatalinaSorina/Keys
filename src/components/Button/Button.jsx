@@ -7,6 +7,7 @@ import type { Node } from 'react';
 export type ButtonProps = {
   display: string,
   position: string,
+  margin: string,
   top: string,
   right: string,
   left: string,
@@ -38,6 +39,7 @@ const Button = (props: ButtonProps) => {
   const {
     display,
     position,
+    margin,
     top,
     right,
     left,
@@ -69,6 +71,7 @@ const Button = (props: ButtonProps) => {
       addStyle={{
         display,
         position,
+        margin,
         top,
         right,
         left,
@@ -103,11 +106,13 @@ const Button = (props: ButtonProps) => {
 Button.defaultProps = {
   display: 'block',
   position: '',
+  margin: '0 0.2rem',
   top: '',
   right: '',
   left: '',
   bottom: '',
   width: '5rem',
+  border: '',
   borderWidth: '0.1rem',
   borderStyle: 'solid',
   borderColor: '#C08497',
