@@ -163,6 +163,7 @@ export const Select = styled.select`
   outline: none;
   color: indianred;
   border-radius: 1rem;
+  float: right;
 `;
 
 export const getStyle = (type) => {

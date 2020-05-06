@@ -38,6 +38,7 @@ export const backgroundDefaultStyle = {
   top: '0',
   padding: '1vh 1vw',
   border: 'none',
+  scrollbarThumbBackgroundImage: 'transparent',
 };
 
 export const removeBackground = {

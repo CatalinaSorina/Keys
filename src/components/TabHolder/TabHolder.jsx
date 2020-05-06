@@ -21,15 +21,14 @@ const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundSty
   const tabHolderStyleCombined = combineStyle(tabHolderStyle,tabHolderDefaultStyle);
   const {display, flexDirection, width, height, ...restTabHolderStyle} = tabHolderStyleCombined;
   const backgroundStyleCombined = removeDefaultBackground? combineStyle(backgroundStyle,removeBackground):combineStyle(backgroundStyle,backgroundDefaultStyle);
-  const tabDefaultStyleCombined = combineStyle(tabDefaultStyle,tabDefaultStyle);
 
-  const tabs = children ? React.Children.map(children, (tab, i) => {
-    if (tab.type.name === 'Tab') {
+  const tabs = children && React.Children.map(children, (child, i) => {
+    if (child.type.name === 'Tab') {
       return i === activeTab
-        ? cloneElement(tab, { setActiveTab: ()=>setActiveTab(-1), activeTab:true, withTabHolder:true })
-        : cloneElement(tab, { setActiveTab: ()=>setActiveTab(i), activeTab:false, withTabHolder:true });
+      ? cloneElement(child, { setActiveTab: ()=>setActiveTab(-1), activeTab:true, withTabHolder:true })
+      : cloneElement(child, { setActiveTab: ()=>setActiveTab(i), activeTab:false, withTabHolder:true });
     }
-  }):[];
+  });
 
   return (
     <Wrapper
@@ -40,24 +39,17 @@ const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundSty
       <Wrapper
         display='flex'
         flexDirection={removeInline ? 'column':'row' }
-        width={ tabHolderStyle && tabHolderStyle.hasOwnProperty('width')?
-          tabHolderStyle.width
-          :(removeInline ? 'auto':'98%') 
-        }
-        height={ tabHolderStyle && tabHolderStyle.hasOwnProperty('height')? 
-          tabHolderStyle.height
-          :(removeInline ? '95%':'auto')
-        }
+        width={removeInline ? 'auto':'98%'}
+        height={removeInline ? '95%':'auto'}
         {...restTabHolderStyle}
       >
-        {tabs.map(tab=>tab)}
+        {tabs && tabs.map(tab=>tab)}
       </Wrapper>
       
       {activeTab !== -1 && 
       <Wrapper {...combineStyle(tabs[activeTab].props.tabStyle,tabDefaultStyle)}>
         {tabs[activeTab].props.children}
       </Wrapper>}
-        
     </Wrapper>
   );
 };
