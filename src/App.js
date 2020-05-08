@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import TabHolder from './components/TabHolder/TabHolder';
-import Tab from './components/Tab/Tab';
 import * as Keys from './components/keys';
 
 const App = () => {
   return (
     <>
-      <TabHolder activeTabIndex={0} removeInline>
-        <Tab openTabText="Button">
+      <Keys.TabHolder activeTabIndex={0} removeInline>
+        <Keys.Tab openTabText="Button">
           <h1>Key Button</h1>
           <h3>Properties:</h3>
           <ul>
@@ -73,16 +71,16 @@ const App = () => {
             or \nconst btnStyleComponent = {\`\n    font: 1.5rem Tahoma;\n\`};\n\n<Button text="With font" width="8rem" border="none" styledComponent={btnStyleComponent} />`}
             />
           </div>
-        </Tab>
-        <Tab openTabText="Input"></Tab>
-        <Tab openTabText="Paragraph"></Tab>
-        <Tab openTabText="Wrapper"></Tab>
-        <Tab openTabText="Modal"></Tab>
-        <Tab openTabText="Tabs"></Tab>
-        <Tab openTabText="Highlighter"></Tab>
-        <Tab openTabText="Spinners"></Tab>
-        <Tab openTabText="Styled component"></Tab>
-      </TabHolder>
+        </Keys.Tab>
+        <Keys.Tab openTabText="Input"></Keys.Tab>
+        <Keys.Tab openTabText="Paragraph"></Keys.Tab>
+        <Keys.Tab openTabText="Wrapper"></Keys.Tab>
+        <Keys.Tab openTabText="Modal"></Keys.Tab>
+        <Keys.Tab openTabText="Tabs"></Keys.Tab>
+        <Keys.Tab openTabText="Highlighter"></Keys.Tab>
+        <Keys.Tab openTabText="Spinners"></Keys.Tab>
+        <Keys.Tab openTabText="Styled component"></Keys.Tab>
+      </Keys.TabHolder>
     </>
   );
 };

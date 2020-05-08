@@ -21,3 +21,10 @@ export {
   TabHolder,
   Wrapper,
 };
+
+export const getKey=(keyName)=>{
+  switch (keyName) {
+    case "Button": return Button;
+    default: return null;
+  }
+}
