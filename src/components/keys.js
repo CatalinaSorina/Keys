@@ -9,6 +9,19 @@ import Tab from './Tab/Tab';
 import TabHolder from './TabHolder/TabHolder';
 import Wrapper from './Wrapper/Wrapper';
 
+export const KEYS = {
+  BUTTON: 'Button',
+  HIGHLIGHTER: 'Highlighter',
+  INPUT: 'Input',
+  MODAL: 'Modal',
+  PARAGRAPHS: 'Paragraph',
+  SPINNERS: 'Spinners',
+  STYLED_COMPONENT: 'Styled component',
+  TAB: 'Tab',
+  TAB_HOLDER: 'TabHolder',
+  WRAPPER: 'Wrapper',
+};
+
 export {
   Button,
   Highlighter,
@@ -22,9 +35,18 @@ export {
   Wrapper,
 };
 
-export const getKey=(keyName)=>{
+export const getKey = (keyName) => {
   switch (keyName) {
-    case "Button": return Button;
+    case KEYS.BUTTON: return Button;
+    case KEYS.HIGHLIGHTER: return Highlighter;
+    case KEYS.INPUT: return Input;
+    case KEYS.MODAL: return Modal;
+    case KEYS.PARAGRAPHS: return Paragraphs;
+    case KEYS.SPINNERS: return Spinners;
+    case KEYS.STYLED_COMPONENT: return StyledComponent;
+    case KEYS.TAB: return Tab;
+    case KEYS.TAB_HOLDER: return TabHolder;
+    case KEYS.WRAPPER: return Wrapper;
     default: return null;
   }
-}
+};

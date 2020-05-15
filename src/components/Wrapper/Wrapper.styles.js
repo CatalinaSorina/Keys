@@ -1,5 +1,6 @@
 //@flow
 import styled from 'styled-components';
+import type { ComponentType } from 'react';
 
 type WrapperStyleProps = {
   addStyle: {
@@ -45,7 +46,7 @@ type WrapperStyleProps = {
   styledComponent?: styled,
 };
 
-export const WrapperStyle = styled.div`
+export const WrapperStyle:ComponentType<WrapperStyleProps> = styled.div`
   ${({ addStyle, styledComponent }: WrapperStyleProps) => `
     display: ${addStyle.display};
     position: ${addStyle.position};

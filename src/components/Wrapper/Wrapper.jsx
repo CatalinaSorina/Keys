@@ -45,7 +45,7 @@ export type WrapperProps = {
   styledComponent?: styled,
 };
 
-const Wrapper = (props: WrapperProps): WrapperStyle => {
+const Wrapper = (props: WrapperProps) => {
   const {
     display,
     position,

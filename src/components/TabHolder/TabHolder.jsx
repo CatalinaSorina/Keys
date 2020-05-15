@@ -8,7 +8,7 @@ import { tabHolderDefaultStyle,tabDefaultStyle,backgroundDefaultStyle,removeBack
 
 export type TabHolderProps = {
   activeTabIndex: number,
-  removeInline: boolean,
+  removeInline?: boolean,
   tabHolderStyle?: WrapperProps,
   backgroundStyle?: WrapperProps,
   children: Node,
@@ -20,7 +20,8 @@ const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundSty
 
   const tabHolderStyleCombined = combineStyle(tabHolderStyle,tabHolderDefaultStyle);
   const {display, flexDirection, width, height, ...restTabHolderStyle} = tabHolderStyleCombined;
-  const backgroundStyleCombined = removeDefaultBackground? combineStyle(backgroundStyle,removeBackground):combineStyle(backgroundStyle,backgroundDefaultStyle);
+  const backgroundStyleDefined = backgroundStyle? combineStyle(backgroundStyle,backgroundDefaultStyle):backgroundDefaultStyle;
+  const backgroundStyleCombined = removeDefaultBackground? combineStyle(backgroundStyleDefined,removeBackground):backgroundStyleDefined;
 
   const tabs = children && React.Children.map(children, (child, i) => {
     if (child.type.name === 'Tab') {

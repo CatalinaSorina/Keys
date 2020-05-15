@@ -14,7 +14,7 @@ type TabProps = {
   activeTab: boolean,
   buttonStyle: ButtonProps,
   activeButtonStyle?: ButtonProps,
-  tabStyle: WrapperProps,
+  tabStyle?: WrapperProps,
   children: Node,
   setActiveTab?: Function,
   withTabHolder: boolean,
@@ -37,7 +37,7 @@ const Tab = ({
   const buttonCurrentStyle = checkActiveTab
     ? combineStyle(activeButtonStyle, activeButtonDefaultStyle)
     : buttonStyle;
-  const tabStyleCombined = combineStyle(tabStyle, tabDefaultStyle);
+  const tabStyleCombined = tabStyle? combineStyle(tabStyle, tabDefaultStyle):tabDefaultStyle;
 
   const { display, ...restTabStyleCombined } = tabStyleCombined;
   const displayTab = display !== 'none' ? display : 'flex';
