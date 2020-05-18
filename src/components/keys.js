@@ -14,7 +14,7 @@ export const KEYS = {
   HIGHLIGHTER: 'Highlighter',
   INPUT: 'Input',
   MODAL: 'Modal',
-  PARAGRAPHS: 'Paragraph',
+  PARAGRAPHS: 'Paragraphs',
   SPINNERS: 'Spinners',
   STYLED_COMPONENT: 'Styled component',
   TAB: 'Tab',

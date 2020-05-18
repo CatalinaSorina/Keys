@@ -6,6 +6,9 @@ export const DARK = 'Charcoal';
 export const PAPER = 'Paper';
 
 const Dark = styled.div`
+  pre {
+    white-space: pre-line;
+  }
   .hljs {
     padding: 1rem;
     font-size: 1rem;
@@ -89,6 +92,10 @@ const Dark = styled.div`
 `;
 
 const Paper = styled.div`
+  pre {
+    white-space: pre-line;
+  }
+  overflow: auto;
   .hljs {
     padding: 1rem;
     font-size: 1rem;
