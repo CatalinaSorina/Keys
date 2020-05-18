@@ -4,9 +4,9 @@ import * as Stories from './components/Stories/Stories';
 import { KEYS, TabHolder, Tab } from './components/keys';
 
 const App = () => {
-  return <TabHolder activeTabIndex={-1} removeInline>
+  return <TabHolder activeTabIndex={1} removeInline>
     <Tab openTabText={KEYS.BUTTON}><Stories.ButtonStory /></Tab>
-    <Tab openTabText={KEYS.INPUT}></Tab>
+    <Tab openTabText={KEYS.INPUT}><Stories.InputStory /></Tab>
     <Tab openTabText={KEYS.PARAGRAPHS}></Tab>
     <Tab openTabText={KEYS.WRAPPER}></Tab>
     <Tab openTabText={KEYS.MODAL}></Tab>
