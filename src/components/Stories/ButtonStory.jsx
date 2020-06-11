@@ -64,6 +64,8 @@ const ButtonStory = () => (
         or\n<Button width="15rem" border="none" styledComponent={\`font: 1.5rem Tahoma;\`}>With font</Button>
         or \nconst btnStyleComponent = \`\n    font: 1.5rem Tahoma;\n\`;\n\n<Button text="With font" width="15rem" border="none" styledComponent={btnStyleComponent} />`,
     }]}
+
+    columns={2}
   />
 );
 

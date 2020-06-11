@@ -1,5 +1,5 @@
 //@flow
-import React, { useState, cloneElement } from 'react';
+import React, { useState, useEffect, cloneElement } from 'react';
 import type { Node } from 'react';
 import Wrapper from '../Wrapper/Wrapper';
 import type { WrapperProps } from '../Wrapper/Wrapper';
@@ -8,6 +8,7 @@ import { tabHolderDefaultStyle,tabDefaultStyle,backgroundDefaultStyle,removeBack
 
 export type TabHolderProps = {
   activeTabIndex: number,
+  dynamicActiveTabIndex?: number,
   removeInline?: boolean,
   tabHolderStyle?: WrapperProps,
   backgroundStyle?: WrapperProps,
@@ -15,13 +16,17 @@ export type TabHolderProps = {
   removeDefaultBackground: boolean,
 };
 
-const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundStyle, children, removeDefaultBackground }: TabHolderProps) => {
+const TabHolder = ({ activeTabIndex, dynamicActiveTabIndex, removeInline, tabHolderStyle, backgroundStyle, children, removeDefaultBackground }: TabHolderProps) => {
   const [activeTab, setActiveTab] = useState(activeTabIndex);
+
+  useEffect(() => {
+    (dynamicActiveTabIndex || dynamicActiveTabIndex===0) && setActiveTab(dynamicActiveTabIndex);
+  }, [dynamicActiveTabIndex])
 
   const tabHolderStyleCombined = combineStyle(tabHolderStyle,tabHolderDefaultStyle);
   const {display, flexDirection, width, height, ...restTabHolderStyle} = tabHolderStyleCombined;
   const backgroundStyleDefined = backgroundStyle? combineStyle(backgroundStyle,backgroundDefaultStyle):backgroundDefaultStyle;
-  const backgroundStyleCombined = removeDefaultBackground? combineStyle(backgroundStyleDefined,removeBackground):backgroundStyleDefined;
+  const backgroundStyleCombined = removeDefaultBackground? combineStyle(backgroundStyle,removeBackground):backgroundStyleDefined;
 
   const tabs = children && React.Children.map(children, (child, i) => {
     if (child.type.name === 'Tab') {
@@ -40,8 +45,8 @@ const TabHolder = ({ activeTabIndex, removeInline, tabHolderStyle, backgroundSty
       <Wrapper
         display='flex'
         flexDirection={removeInline ? 'column':'row' }
-        width={removeInline ? 'auto':'98%'}
-        height={removeInline ? '95%':'auto'}
+        width={removeInline ? 'auto': width}
+        height={removeInline ? '95%': height}
         {...restTabHolderStyle}
       >
         {tabs && tabs.map(tab=>tab)}

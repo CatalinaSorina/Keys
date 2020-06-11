@@ -3,7 +3,7 @@ import Highlighter from './Highlighter/Highlighter';
 import Input from './Input/Input';
 import Modal from './Modal/Modal';
 import Paragraphs from './Paragraphs/Paragraphs';
-import Spinners from './Spinners/Spinners';
+import Cross from './Spinners/Cross/Cross';
 import StyledComponent from './StyledComponent/StyledComponent';
 import Tab from './Tab/Tab';
 import TabHolder from './TabHolder/TabHolder';
@@ -28,7 +28,7 @@ export {
   Input,
   Modal,
   Paragraphs,
-  Spinners,
+  Cross,
   StyledComponent,
   Tab,
   TabHolder,
@@ -42,7 +42,7 @@ export const getKey = (keyName) => {
     case KEYS.INPUT: return Input;
     case KEYS.MODAL: return Modal;
     case KEYS.PARAGRAPHS: return Paragraphs;
-    case KEYS.SPINNERS: return Spinners;
+    case KEYS.SPINNERS: return Cross;
     case KEYS.STYLED_COMPONENT: return StyledComponent;
     case KEYS.TAB: return Tab;
     case KEYS.TAB_HOLDER: return TabHolder;

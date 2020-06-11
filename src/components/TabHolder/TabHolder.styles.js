@@ -7,7 +7,7 @@ export const tabHolderDefaultStyle = {
   padding: '1%',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
-  backgroundColor: 'none'
+  backgroundColor: 'none',
 };
 
 export const tabDefaultStyle = {
@@ -21,7 +21,7 @@ export const tabDefaultStyle = {
   padding: '1vh 1vw',
   marginTop: '1vh',
   textShadow: '0.1rem 0.1rem 0.2rem #C08497',
-}
+};
 
 export const backgroundDefaultStyle = {
   justifyContent: 'flex-start',
@@ -44,7 +44,7 @@ export const backgroundDefaultStyle = {
 export const removeBackground = {
   width: '',
   height: '',
-  border:'none',
+  border: 'none',
   boxShadow: 'none',
   backgroundColor: 'transparent',
-}
+};

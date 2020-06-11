@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-const Component = styled(({ type }) => type)`
-  ${({ styledComponent }) => styledComponent && styledComponent}
+export const setComponent = (type,styledComponent) => styled(type)`
+  ${styledComponent}
 `;
-
-export default Component;

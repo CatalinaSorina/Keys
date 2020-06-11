@@ -73,6 +73,7 @@ const InputStory = () => (
     font-style:italic;\n\`;\n\n<Input text="With font" width="20rem" border="none" styledComponent={inputStyleComponent} />`,
       },
     ]}
+    columns={2}
   />
 );
 
