@@ -1,21 +1,21 @@
 // @flow
 import React from 'react';
+import type { Node } from 'react';
 import ParagraphStyled from './Paragraphs.style';
-import type styled from 'styled-components';
 
 type ParagraphsProps = {
   indent: string,
   color: string,
   textShadow: string,
   text?: string,
-  styledComponent?: styled
+  styledComponent?: string
 };
 
-const Paragraphs = (props: ParagraphsProps): ParagraphStyled => {
+const Paragraphs = (props: ParagraphsProps): Node => {
   const { indent, color, textShadow, text, styledComponent } = props;
   const paragraphs = text && text.match(/[^\r\n]+/g);
 
-  return paragraphs && paragraphs.map((line, i) => (
+  return paragraphs ? paragraphs.map((line, i) => (
     <ParagraphStyled
       key={i + 'line'}
       addStyle={{
@@ -28,7 +28,7 @@ const Paragraphs = (props: ParagraphsProps): ParagraphStyled => {
     >
       {line}
     </ParagraphStyled>
-  ));
+  )):null;
 };
 
 Paragraphs.defaultProps = {
