@@ -19,8 +19,8 @@ const StoryTabContent = ({keyName,keyProps,examples,columns,hidePropsTitle}:Stor
         {!hidePropsTitle && <h3>Properties:</h3>}
         <ul style={{columns:columns}}> {keyProps.map((prop,index)=><li key={`prop${index}`}>{prop}</li>)} </ul>
         {examples && examples.map((example,index)=><div key={`example${index}`}>
-            <Key {...example.props} />
-            <Highlighter code={example.code} />
+            {example.props && <Key {...example.props} />}
+            {example.code && <Highlighter code={example.code} />}
         </div>)}
     </div>
 }

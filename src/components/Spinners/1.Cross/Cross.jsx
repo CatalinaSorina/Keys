@@ -17,19 +17,7 @@ type CrossProps = {
   unicolor: boolean,
 };
 
-const Cross = ({
-  loading,
-  margin,
-  padding,
-  width,
-  height,
-  background,
-  size,
-  color,
-  colors,
-  marginCircle,
-  unicolor,
-}: CrossProps): Wrapper =>
+const Cross = ({ loading, margin, padding, width, height, background, size, color, colors, marginCircle, unicolor }: CrossProps): Wrapper =>
   loading && (
     <Wrapper
       width={width}

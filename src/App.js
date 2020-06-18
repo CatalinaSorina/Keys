@@ -5,7 +5,7 @@ import { KEYS, TabHolder, Tab } from './components/keys';
 
 const App = () => {
   const buttonStyle={buttonStyle:{width:"7rem"}};
-  return <TabHolder activeTabIndex={8} removeInline>
+  return <TabHolder activeTabIndex={7} removeInline>
     <Tab openTabText={KEYS.BUTTON} {...buttonStyle}><Stories.ButtonStory /></Tab>
     <Tab openTabText={KEYS.INPUT} {...buttonStyle}><Stories.InputStory /></Tab>
     <Tab openTabText={KEYS.PARAGRAPHS} {...buttonStyle}><Stories.ParagraphsStory /></Tab>
