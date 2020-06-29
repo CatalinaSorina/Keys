@@ -1,5 +1,6 @@
 //@flow
 import React from 'react';
+import type { Node } from 'react';
 import Highlighter from '../Highlighter/Highlighter';
 import { getKey } from "../keys";
 
@@ -8,10 +9,11 @@ type StoryTabContentProps = {
     keyProps:Array<string>,
     examples:Array<{props:{},code:string}>,
     columns:number,
-    hidePropsTitle:boolean
+    hidePropsTitle:boolean,
+    children:Node,
 }
 
-const StoryTabContent = ({keyName,keyProps,examples,columns,hidePropsTitle}:StoryTabContentProps) => {
+const StoryTabContent = ({keyName,keyProps,examples,columns,hidePropsTitle,children}:StoryTabContentProps) => {
     const Key=getKey(keyName);
 
     return <div>
@@ -22,6 +24,7 @@ const StoryTabContent = ({keyName,keyProps,examples,columns,hidePropsTitle}:Stor
             {example.props && <Key {...example.props} />}
             {example.code && <Highlighter code={example.code} />}
         </div>)}
+        {children}
     </div>
 }
 
