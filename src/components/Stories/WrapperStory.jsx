@@ -21,6 +21,7 @@ const WrapperStory = () => (
       'color',
       'textShadow',
       'border',
+      'borderRadius',
       'borderWidth',
       'borderStyle',
       'borderColor',

@@ -63,7 +63,7 @@ export const Spider = styled.div`
 export const SpiderFeet = styled.div`
   position: absolute;
   font: 1rem Cursive;
-  color: black;
+  color: ${({ color }) => color};
   top: -0.7rem;
   left: -0.15rem;
   ${({ rotate }) => rotate && `transform:rotate(${rotate})`}

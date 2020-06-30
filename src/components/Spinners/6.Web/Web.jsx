@@ -12,8 +12,8 @@ const Web = ({ loading = true, color="white", spiderColor="black" }:WebProps) =>
   loading && (
     <Wrapper>
       <Spider color={spiderColor}>
-        <SpiderFeet>x</SpiderFeet>
-        <SpiderFeet rotate="35deg">x</SpiderFeet>
+        <SpiderFeet color={spiderColor}>x</SpiderFeet>
+        <SpiderFeet color={spiderColor} rotate="35deg">x</SpiderFeet>
       </Spider>
       <SiteLine rotate="44deg" color={color} />
       <Site color={color} size="8rem" shadow="1.4rem">

@@ -19,6 +19,7 @@ type WrapperStyleProps = {
     color: string,
     textShadow: string,
     border?: string,
+    borderRadius: string,
     borderWidth: string,
     borderStyle: string,
     borderColor: string,
@@ -72,6 +73,7 @@ export const WrapperStyle:ComponentType<WrapperStyleProps> = styled.div`
           border-style: ${addStyle.borderStyle};
           border-color: ${addStyle.borderColor};
         `}
+    border-radius: ${addStyle.borderRadius};
     box-shadow: ${addStyle.boxShadow};
     ${addStyle.background
         ? `background: ${addStyle.background};`

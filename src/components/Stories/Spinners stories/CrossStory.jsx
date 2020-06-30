@@ -6,7 +6,7 @@ const CrossStory = () => (
   <StoryTab
     keyName={KEYS.CROSS}
     keyProps={[
-      'loading',
+      'loading: a boolean used to run the spinner',
       'margin',
       'padding',
       'width',
@@ -20,21 +20,17 @@ const CrossStory = () => (
     ]}
     examples={[
       {
-        props: {
-          text: 'Default',
-        },
+        props: {},
         code: `<Cross />`,
       },
       {
         props: {
-          text: 'Peach',
           colors: "peach",
         },
         code: `<Cross colors="peach" />`,
       },
       {
         props: {
-          text: 'Rainbow',
           colors:["red","yellow","blue","green","black","purple","orange","lightgreen"],
           unicolor: true,
         },
