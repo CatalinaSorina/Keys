@@ -6,9 +6,9 @@ import {
 import { checkColorsIndex } from './Dots.utils';
 
 type DotsProps = {
-  loading: boolean,
-  colors: Array<string> | string,
-  borderColors: Array<string> | string,
+  loading?: boolean,
+  colors?: Array<string> | string,
+  borderColors?: Array<string> | string,
 };
 
 const Dots = ({ loading, colors, borderColors }: DotsProps) => loading && (
