@@ -24,47 +24,50 @@ const ButtonStory = () => (
       "text: a string used to define the button's name",
       'styledComponent: a string used to add styled component',
     ]}
-
-    examples={[{
-      props: {
-        text: 'Default',
-      },
-      code: `<Button text="Default" /> 
+    examples={[
+      {
+        props: {
+          text: 'Default',
+        },
+        code: `<Button text="Default" /> 
         or\n<Button>Default</Button>`,
-    }, {
-      props: {
-        text: 'Big',
-        width: '10rem',
-        padding: '1rem',
-        borderRadius: '0',
       },
-      code: `<Button text="Big" width="10rem" padding="1rem" borderRadius="0" /> 
+      {
+        props: {
+          text: 'Big',
+          width: '10rem',
+          padding: '1rem',
+          borderRadius: '0',
+        },
+        code: `<Button text="Big" width="10rem" padding="1rem" borderRadius="0" /> 
         or\n<Button width="10rem" padding="1rem" borderRadius="0">Big</Button>`,
-    }, {
-      props: {
-        text: 'Colored',
-        width: '7rem',
-        color: '#3F5981',
-        backgroundColor: 'lightblue',
-        border: 'none',
-        hoverBackground: '#507CBF',
-        hoverColor: 'lightblue',
       },
-      code: `<Button text="Colored" width="7rem" color="#3F5981" backgroundColor="lightblue" border="none" hoverBackground="#507CBF" hoverColor="lightblue" />
+      {
+        props: {
+          text: 'Colored',
+          width: '7rem',
+          color: '#3F5981',
+          backgroundColor: 'lightblue',
+          border: 'none',
+          hoverBackground: '#507CBF',
+          hoverColor: 'lightblue',
+        },
+        code: `<Button text="Colored" width="7rem" color="#3F5981" backgroundColor="lightblue" border="none" hoverBackground="#507CBF" hoverColor="lightblue" />
         or\n<Button width="7rem" color="#3F5981" backgroundColor="lightblue" border="none" hoverBackground="#507CBF" hoverColor="lightblue">Colored</Button>
         or \nconst btnStyle = { width="7rem", color="#3F5981", backgroundColor="lightblue", border="none", hoverBackground="#507CBF", hoverColor="lightblue" };\n<Button text="Colored" {...btnStyle} />`,
-    }, {
-      props: {
-        text: 'Font with styledComponent',
-        width: '15rem',
-        border: 'none',
-        styledComponent: 'font: 1.5rem Tahoma;',
       },
-      code: `<Button text="With font" width="15rem" border="none" styledComponent={\`font: 1.5rem Tahoma;\`} />
+      {
+        props: {
+          text: 'Font with styledComponent',
+          width: '15rem',
+          border: 'none',
+          styledComponent: 'font: 1.5rem Tahoma;',
+        },
+        code: `<Button text="With font" width="15rem" border="none" styledComponent={\`font: 1.5rem Tahoma;\`} />
         or\n<Button width="15rem" border="none" styledComponent={\`font: 1.5rem Tahoma;\`}>With font</Button>
         or \nconst btnStyleComponent = \`\n    font: 1.5rem Tahoma;\n\`;\n\n<Button text="With font" width="15rem" border="none" styledComponent={btnStyleComponent} />`,
-    }]}
-
+      },
+    ]}
     columns={2}
   />
 );
