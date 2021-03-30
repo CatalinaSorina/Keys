@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import selectArrow from "../../../public/images/selectArrow.svg";
-import { SelectHolder, SelectValue, Select, ArrowImg, SelectOptions, Option, } from "./styles/ScrollSelect.styles";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import selectArrow from '../../../public/images/selectArrow.svg';
+import {
+ SelectHolder, SelectValue, Select, ArrowImg, SelectOptions, Option,
+} from './styles/ScrollSelect.styles';
 
 // IF YOU USE SCROLL SELECT DON'T FORGET TO GIVE
 // ID'S THE SAME AS HERE, item.replace(/\s/g, "")
@@ -19,7 +21,7 @@ const ScrollSelect = ({ placeholder, items }) => {
       <SelectOptions hide={hideOptions}>
         {items && items.length > 0 && items.map((item) => (
           <Option
-            to={"#" + item.replace(/\s/g, "")}
+            to={`#${item.replace(/\s/g, '')}`}
             smooth
             active={itemSelected === item}
             onClick={() => {
@@ -39,9 +41,10 @@ export default ScrollSelect;
 
 ScrollSelect.propTypes = {
   placeholder: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
   items: PropTypes.arrayOf(PropTypes.string),
 };
 
 ScrollSelect.defaultProps = {
-  placeholder: "choose...",
+  placeholder: 'choose...',
 };

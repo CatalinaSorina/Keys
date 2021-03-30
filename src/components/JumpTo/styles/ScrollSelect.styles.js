@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { HashLink } from "react-router-hash-link";
+import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 
 export const SelectHolder = styled.div`
   position: relative;
@@ -35,7 +35,7 @@ export const ArrowImg = styled.img`
 `;
 
 export const SelectOptions = styled.div`
-  display: ${({ hide }) => (hide ? "none" : "flex")};
+  display: ${({ hide }) => (hide ? 'none' : 'flex')};
   flex-direction: column;
   position: absolute;
   padding: 5px;
