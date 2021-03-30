@@ -29,6 +29,7 @@ const Cross = ({
 >
   {['TOP', 'LEFT', 'BOTTOM', 'RIGHT'].map((val, i) => (
     <Circle
+      key={i}
       color={color}
       colors={setColors(colors)}
       unicolor={unicolor}

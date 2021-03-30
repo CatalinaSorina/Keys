@@ -4,36 +4,23 @@ import * as Stories from './components/Stories/Stories';
 import { KEYS, TabHolder, Tab } from './components/keys';
 
 const App = () => {
-  const buttonStyle = { buttonStyle: { width: '7rem' } };
+  const buttonStyle = { width: '7rem' };
+  const TabStyled = (tabText, child) => (
+    <Tab openTabText={tabText} buttonStyle={buttonStyle}>
+      {child}
+    </Tab>
+  );
   return (
     <TabHolder activeTabIndex={-1} removeInline>
-      <Tab openTabText={KEYS.BUTTON} {...buttonStyle}>
-        <Stories.ButtonStory />
-      </Tab>
-      <Tab openTabText={KEYS.INPUT} {...buttonStyle}>
-        <Stories.InputStory />
-      </Tab>
-      <Tab openTabText={KEYS.PARAGRAPHS} {...buttonStyle}>
-        <Stories.ParagraphsStory />
-      </Tab>
-      <Tab openTabText={KEYS.WRAPPER} {...buttonStyle}>
-        <Stories.WrapperStory />
-      </Tab>
-      <Tab openTabText={KEYS.MODAL} {...buttonStyle}>
-        <Stories.ModalStory />
-      </Tab>
-      <Tab openTabText={KEYS.TAB} {...buttonStyle}>
-        <Stories.TabStory />
-      </Tab>
-      <Tab openTabText={KEYS.HIGHLIGHTER} {...buttonStyle}>
-        <Stories.HighlighterStory />
-      </Tab>
-      <Tab openTabText={KEYS.SPINNERS} {...buttonStyle}>
-        <Stories.SpinnersStory />
-      </Tab>
-      <Tab openTabText={KEYS.STYLED_COMPONENT} {...buttonStyle}>
-        <Stories.StyledComponentStory />
-      </Tab>
+      {TabStyled(KEYS.BUTTON, <Stories.ButtonStory />)}
+      {TabStyled(KEYS.INPUT, <Stories.InputStory />)}
+      {TabStyled(KEYS.PARAGRAPHS, <Stories.ParagraphsStory />)}
+      {TabStyled(KEYS.WRAPPER, <Stories.WrapperStory />)}
+      {TabStyled(KEYS.MODAL, <Stories.ModalStory />)}
+      {TabStyled(KEYS.TAB, <Stories.TabStory />)}
+      {TabStyled(KEYS.HIGHLIGHTER, <Stories.HighlighterStory />)}
+      {TabStyled(KEYS.SPINNERS, <Stories.SpinnersStory />)}
+      {TabStyled(KEYS.STYLED_COMPONENT, <Stories.StyledComponentStory />)}
     </TabHolder>
   );
 };

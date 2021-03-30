@@ -99,7 +99,7 @@ Input.defaultProps = {
   type: 'text',
   text: '',
   onChange: () => {},
-  value: null,
+  value: '',
   styledComponent: '',
 };
 
