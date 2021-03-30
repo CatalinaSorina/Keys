@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
-import { DARK, PAPER, getStyle, Select } from './Highlighter.styles';
+import {
+ DARK, PAPER, getStyle, Select,
+} from './Highlighter.styles';
+
 hljs.registerLanguage('javascript', javascript);
 
-const Highlighter = ({code}) => {
+const Highlighter = ({ code }) => {
   const node = React.createRef();
   const [styleCode, setStyleCode] = useState(DARK);
   const Style = getStyle(styleCode);
