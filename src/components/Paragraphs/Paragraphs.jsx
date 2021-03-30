@@ -12,12 +12,14 @@ type ParagraphsProps = {
 };
 
 const Paragraphs = (props: ParagraphsProps): Node => {
-  const { indent, color, textShadow, text, styledComponent } = props;
+  const {
+ indent, color, textShadow, text, styledComponent,
+} = props;
   const paragraphs = text && text.match(/[^\r\n]+/g);
 
   return paragraphs ? paragraphs.map((line, i) => (
     <ParagraphStyled
-      key={i + 'line'}
+      key={`${i}line`}
       addStyle={{
         indent,
         color,
@@ -28,7 +30,7 @@ const Paragraphs = (props: ParagraphsProps): Node => {
     >
       {line}
     </ParagraphStyled>
-  )):null;
+  )) : null;
 };
 
 Paragraphs.defaultProps = {

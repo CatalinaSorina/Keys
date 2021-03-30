@@ -1,4 +1,4 @@
-import style from "styled-components";
+import style from 'styled-components';
 
 const ParagraphStyled = style.p`
     ${({ addStyle, styledComponent }) => `
