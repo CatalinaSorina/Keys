@@ -3,13 +3,13 @@ import React from 'react';
 import { Wrapper, Petal, Dot } from './Flower.styles';
 
 type FlowerProps = {
-  loading: boolean,
-  color: string,
-  middleColor: string,
-  removeBorder: boolean,
-  removeMiddleBorder: boolean,
-  borderColor: string,
-  middleBorderColor: string,
+  loading?: boolean,
+  color?: string,
+  middleColor?: string,
+  removeBorder?: boolean,
+  removeMiddleBorder?: boolean,
+  borderColor?: string,
+  middleBorderColor?: string,
 };
 
 const Flower = ({

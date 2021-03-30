@@ -3,14 +3,14 @@ import React from 'react';
 import { Wrapper, Button, TextButton } from './Keyboard.styles';
 
 type KeyboardProps = {
-  loading: boolean,
-  color: string,
-  text: string,
-  textColor: string,
-  size: string,
-  font: string,
-  leftTextPosition: string,
-  topTextPosition: string
+  loading?: boolean,
+  color?: string,
+  text?: string,
+  textColor?: string,
+  size?: string,
+  font?: string,
+  leftTextPosition?: string,
+  topTextPosition?: string
 }
 
 const Keyboard = ({

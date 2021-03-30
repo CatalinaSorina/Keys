@@ -4,16 +4,16 @@ import type { Node } from 'react';
 import { SquareHolder, RoundedSquare } from './RoundedSquares.styles';
 
 type RoundedSquaresProps = {
-  loading: boolean,
-  animation: string,
+  loading?: boolean,
+  animation?: string,
   time: string,
   delay: string,
   type: string,
-  rgbColorNumbers: string,
-  borderColor: string,
-  borderRadius: string,
-  size: string,
-  margin: string
+  rgbColorNumbers?: string,
+  borderColor?: string,
+  borderRadius?: string,
+  size?: string,
+  margin?: string
 };
 
 const RoundedSquares = ({
