@@ -1,10 +1,10 @@
-//@flow
+// @flow
 import React, { useState } from 'react';
+import type { Node } from 'react';
 import Wrapper from '../Wrapper/Wrapper';
 import Button from '../Button/Button';
 import type { ButtonProps } from '../Button/Button';
 import type { WrapperProps } from '../Wrapper/Wrapper';
-import type { Node } from 'react';
 import { combineStyle } from '../../data/utils';
 import { closeButtonDefaultStyle, modalDefaultStyle } from './Modal.styles';
 
@@ -27,14 +27,14 @@ const Modal = ({
 }: ModalProps) => {
   const [show, setShow] = useState(false);
 
-  const closeButtonStyleCombined = combineStyle(closeButtonStyle,closeButtonDefaultStyle);
+  const closeButtonStyleCombined = combineStyle(closeButtonStyle, closeButtonDefaultStyle);
   const modalStyleCombined = combineStyle(modalStyle, modalDefaultStyle);
 
   const { display, ...restModalStyleCombined } = modalStyleCombined;
   const displayModal = display !== 'none' ? display : 'flex';
 
   return (
-    <React.Fragment>
+    <>
       <Button
         text={openModalText}
         {...buttonStyle}
@@ -45,13 +45,13 @@ const Modal = ({
         {...restModalStyleCombined}
       >
         <Button
-          text={closeModalText ? closeModalText : 'x'}
+          text={closeModalText || 'x'}
           {...closeButtonStyleCombined}
           onClick={() => setShow(false)}
         />
         {children}
       </Wrapper>
-    </React.Fragment>
+    </>
   );
 };
 
