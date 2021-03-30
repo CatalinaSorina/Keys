@@ -56,7 +56,7 @@ const Modal = ({
 };
 
 Modal.defaultProps = {
-  openModalText: 'open',
+  buttonStyle: null,
 };
 
 export default Modal;
