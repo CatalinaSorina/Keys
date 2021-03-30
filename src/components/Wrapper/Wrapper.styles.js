@@ -1,5 +1,5 @@
-//@flow
-import styled from 'styled-components';
+/* eslint-disable comma-dangle */
+import styled, { css } from 'styled-components';
 import type { ComponentType } from 'react';
 
 type WrapperStyleProps = {
@@ -47,8 +47,8 @@ type WrapperStyleProps = {
   styledComponent?: styled,
 };
 
-export const WrapperStyle:ComponentType<WrapperStyleProps> = styled.div`
-  ${({ addStyle, styledComponent }: WrapperStyleProps) => `
+const WrapperStyle: ComponentType<WrapperStyleProps> = styled.div(
+  ({ addStyle, styledComponent }: WrapperStyleProps) => css`
     display: ${addStyle.display};
     position: ${addStyle.position};
     flex-direction: ${addStyle.flexDirection};
@@ -59,16 +59,16 @@ export const WrapperStyle:ComponentType<WrapperStyleProps> = styled.div`
     padding: ${addStyle.padding};
     margin: ${addStyle.margin};
     ${addStyle.font
-        ? `font: ${addStyle.font};`
-        : `
+      ? `font: ${addStyle.font};`
+      : `
           font-size: ${addStyle.fontSize};
           font-family: ${addStyle.fontFamily};
         `}
     color: ${addStyle.color};
     text-shadow: ${addStyle.textShadow};
     ${addStyle.border
-        ? `border: ${addStyle.border};`
-        : `
+      ? `border: ${addStyle.border};`
+      : `
           border-width: ${addStyle.borderWidth};
           border-style: ${addStyle.borderStyle};
           border-color: ${addStyle.borderColor};
@@ -76,8 +76,8 @@ export const WrapperStyle:ComponentType<WrapperStyleProps> = styled.div`
     border-radius: ${addStyle.borderRadius};
     box-shadow: ${addStyle.boxShadow};
     ${addStyle.background
-        ? `background: ${addStyle.background};`
-        : `background-color: ${addStyle.backgroundColor};`}
+      ? `background: ${addStyle.background};`
+      : `background-color: ${addStyle.backgroundColor};`}
     background-image: ${addStyle.backgroundImage};
     background-position: ${addStyle.backgroundPosition};
     background-size: ${addStyle.backgroundSize};
@@ -102,14 +102,14 @@ export const WrapperStyle:ComponentType<WrapperStyleProps> = styled.div`
       background-image: ${addStyle.scrollbarThumbBackgroundImage};
     }
 
-    &::selection, *::selection {
+    &::selection,
+    *::selection {
       color: ${addStyle.selectColor};
-      background-color:${addStyle.selectBackgroundColor};
-      text-shadow:${addStyle.selectTextShadow};
+      background-color: ${addStyle.selectBackgroundColor};
+      text-shadow: ${addStyle.selectTextShadow};
     }
 
-    ${styledComponent ? styledComponent : ''}
-  `}
-`;
-
+    ${css`${styledComponent}`}
+  `
+);
 export default WrapperStyle;
