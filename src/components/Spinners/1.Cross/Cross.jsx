@@ -4,17 +4,17 @@ import { Wrapper, Circle } from './Cross.styles';
 import { setColors } from './Cross.utils';
 
 type CrossProps = {
-  loading: boolean,
-  margin: string,
-  padding: string,
-  width: string,
-  height: string,
-  background: string,
-  size: string,
+  loading?: boolean,
+  margin?: string,
+  padding?: string,
+  width?: string,
+  height?: string,
+  background?: string,
+  size?: string,
   color?: string,
-  colors: Array<string>,
-  marginCircle: string,
-  unicolor: boolean,
+  colors?: Array<string>,
+  marginCircle?: string,
+  unicolor?: boolean,
 };
 
 const Cross = ({
@@ -49,6 +49,7 @@ Cross.defaultProps = {
   height: '5rem',
   background: 'transparent',
   size: '1rem',
+  color: null,
   colors: ['#674952', '#E7C9D2'],
   marginCircle: '0.3rem',
   unicolor: false,
