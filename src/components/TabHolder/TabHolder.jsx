@@ -56,19 +56,19 @@ const TabHolder = ({
 
   // eslint-disable-next-line consistent-return
   const tabs = children && React.Children.map(children, (child, i) => {
-      if (child.type.name === 'Tab') {
-        return i === activeTab
-          ? cloneElement(child, {
-              setActiveTab: () => setActiveTab(-1),
-              activeTab: true,
-              withTabHolder: true,
-            })
-          : cloneElement(child, {
-              setActiveTab: () => setActiveTab(i),
-              activeTab: false,
-              withTabHolder: true,
-            });
-      }
+    // eslint-disable-next-line no-console
+    console.log(child.type.name);
+    return i === activeTab
+      ? cloneElement(child, {
+        setActiveTab: () => setActiveTab(-1),
+        activeTab: true,
+        withTabHolder: true,
+      })
+      : cloneElement(child, {
+        setActiveTab: () => setActiveTab(i),
+        activeTab: false,
+        withTabHolder: true,
+      });
     });
 
   return (
