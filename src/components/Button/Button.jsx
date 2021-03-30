@@ -1,37 +1,36 @@
 // @flow
 import React from 'react';
-import ButtonStyle from './Button.style';
-import type styled from 'styled-components';
 import type { Node } from 'react';
+import ButtonStyle from './Button.style';
 
 export type ButtonProps = {
-  display: string,
-  position: string,
-  margin: string,
-  top: string,
-  right: string,
-  left: string,
-  bottom: string,
-  width: string,
-  border: string,
-  borderWidth: string,
-  borderStyle: string,
-  borderColor: string,
-  borderRadius: string,
+  display?: string,
+  position?: string,
+  margin?: string,
+  top?: string,
+  right?: string,
+  left?: string,
+  bottom?: string,
+  width?: string,
+  border?: string,
+  borderWidth?: string,
+  borderStyle?: string,
+  borderColor?: string,
+  borderRadius?: string,
   background?: string,
-  backgroundColor: string,
-  boxShadow: string,
-  boxShadowColor: string,
-  color: string,
-  textShadow: string,
-  activeTextShadow: string,
-  activeColor: string,
-  outline: string,
-  padding: string,
-  hoverBackground: string,
-  hoverColor: string,
+  backgroundColor?: string,
+  boxShadow?: string,
+  boxShadowColor?: string,
+  color?: string,
+  textShadow?: string,
+  activeTextShadow?: string,
+  activeColor?: string,
+  outline?: string,
+  padding?: string,
+  hoverBackground?: string,
+  hoverColor?: string,
   text: string,
-  styledComponent?: styled,
+  styledComponent?: string,
   children?: Node,
 };
 
@@ -98,7 +97,7 @@ const Button = (props: ButtonProps) => {
       styledComponent={styledComponent}
       {...(props: any)}
     >
-      {children ? children : text}
+      {children || text}
     </ButtonStyle>
   );
 };
@@ -117,6 +116,7 @@ Button.defaultProps = {
   borderStyle: 'solid',
   borderColor: '#C08497',
   borderRadius: '1rem',
+  background: '',
   backgroundColor: '#FFCAD4',
   boxShadow: 'inset 0 0.05rem 0.3rem',
   boxShadowColor: '#C08497',
@@ -128,6 +128,8 @@ Button.defaultProps = {
   padding: '0.5rem',
   hoverBackground: '#C08497',
   hoverColor: '#FFCAD4',
+  styledComponent: '',
+  children: null,
 };
 
 export default Button;

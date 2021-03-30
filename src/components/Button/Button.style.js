@@ -1,4 +1,4 @@
-import style from 'styled-components';
+import style, { css } from 'styled-components';
 
 const ButtonStyle = style.button`
     ${({ addStyle, styledComponent }) => `
@@ -10,8 +10,8 @@ const ButtonStyle = style.button`
         left: ${addStyle.left};
         bottom: ${addStyle.bottom};
         width: ${addStyle.width};
-        ${addStyle.border ? 
-            `border: ${addStyle.border};`
+        ${addStyle.border
+            ? `border: ${addStyle.border};`
             : `border-width: ${addStyle.borderWidth};
             border-style: ${addStyle.borderStyle};
             border-color: ${addStyle.borderColor};
@@ -36,7 +36,7 @@ const ButtonStyle = style.button`
             text-shadow:${addStyle.activeTextShadow};
         }
 
-        ${styledComponent && styledComponent}
+        ${css`${styledComponent && styledComponent}`}
     `}
 `;
 
