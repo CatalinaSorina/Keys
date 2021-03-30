@@ -7,7 +7,11 @@ const TabStory = () => (
     keyName={`${KEYS.TAB} and ${KEYS.TAB_HOLDER}`}
     keyProps={[
       'Tab can be used outside TabHolder, but when there is used more than one Tab, TabHolder group them and is more useful.',
-      <h2>{KEYS.TAB} props</h2>,
+      <h2>
+        {KEYS.TAB}
+        {' '}
+        props
+      </h2>,
       'openTabText',
       'closeTabText',
       'activeTab: used to set if a tab is opened the first time',
@@ -16,7 +20,11 @@ const TabStory = () => (
       'tabStyle: a string used to add styled component for tab wrapper',
       'children: not necessary, for react elements inside the Tab',
       'setActiveTab: function to change the tab opened or closed',
-      <h2>{KEYS.TAB_HOLDER} props</h2>,
+      <h2>
+        {KEYS.TAB_HOLDER}
+        {' '}
+        props
+      </h2>,
       'activeTabIndex: used to set the first time the opened Tab, default is set to 0, set -1 for closing all Tabs',
       'dynamicActiveTabIndex: used to change the Tab opened according to something',
       'removeInline: use this prop if you want Tabs to be vertically positioned',

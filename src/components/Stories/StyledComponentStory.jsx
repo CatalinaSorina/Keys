@@ -17,7 +17,7 @@ const StyledComponentStory = () => (
           children: 'Custom Button',
           styledComponent: 'border-radius:1rem;background-color:lightgreen;padding:2rem;outline:none;',
         },
-        code: `<StyledComponent type="button" styledComponent="border-radius:1rem;background-color:lightgreen;padding:2rem;outline:none;">Custom Button</StyledComponent>`,
+        code: '<StyledComponent type="button" styledComponent="border-radius:1rem;background-color:lightgreen;padding:2rem;outline:none;">Custom Button</StyledComponent>',
       },
     ]}
   />

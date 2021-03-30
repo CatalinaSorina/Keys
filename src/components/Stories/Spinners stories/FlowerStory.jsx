@@ -17,7 +17,7 @@ const FlowerStory = () => (
     examples={[
       {
         props: {},
-        code: `<Flower />`,
+        code: '<Flower />',
       },
       {
         props: {
@@ -25,7 +25,7 @@ const FlowerStory = () => (
           removeBorder: true,
           middleBorderColor: '#FF970A',
         },
-        code: `<Flower middleColor="#FFCC87" removeBorder middleBorderColor="#FF970A" />`,
+        code: '<Flower middleColor="#FFCC87" removeBorder middleBorderColor="#FF970A" />',
       },
       {
         props: {
@@ -34,7 +34,7 @@ const FlowerStory = () => (
           middleColor: '#FFCC87',
           removeMiddleBorder: true,
         },
-        code: `<Flower color="#526F9F" borderColor="#3360A9" middleColor="#FFCC87" removeMiddleBorder />`,
+        code: '<Flower color="#526F9F" borderColor="#3360A9" middleColor="#FFCC87" removeMiddleBorder />',
       },
     ]}
   />

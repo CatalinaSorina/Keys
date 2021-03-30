@@ -18,24 +18,24 @@ const KeyboardStory = () => (
     examples={[
       {
         props: {},
-        code: `<Keyboard />`,
+        code: '<Keyboard />',
       },
       {
         props: {
-            text: "waiting ...",
-            color: "#526F9F",
-            textColor: "#FFCC87"
+            text: 'waiting ...',
+            color: '#526F9F',
+            textColor: '#FFCC87',
         },
-        code: `<Keyboard text="waiting ..." color="#526F9F" textColor="#FFCC87" />`,
+        code: '<Keyboard text="waiting ..." color="#526F9F" textColor="#FFCC87" />',
       },
       {
         props: {
-          size: "15rem",
-          font: "1.5rem Helvetica, sans-serif",
-          leftTextPosition:"5rem",
-          topTextPosition: "8rem",
+          size: '15rem',
+          font: '1.5rem Helvetica, sans-serif',
+          leftTextPosition: '5rem',
+          topTextPosition: '8rem',
         },
-        code: `<Keyboard size="15rem" font="1.5rem Helvetica, sans-serif" leftTextPosition="5rem" topTextPosition="8rem" />`,
+        code: '<Keyboard size="15rem" font="1.5rem Helvetica, sans-serif" leftTextPosition="5rem" topTextPosition="8rem" />',
       },
     ]}
   />

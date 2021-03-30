@@ -20,23 +20,23 @@ const RoundedSquaresStory = () => (
     examples={[
       {
         props: {},
-        code: `<RoundedSquares />`,
+        code: '<RoundedSquares />',
       },
       {
         props: {
-          animation: "matrix",
-          time: "4s",
+          animation: 'matrix',
+          time: '4s',
         },
-        code: `<RoundedSquares animation="matrix" time="4s" />`,
+        code: '<RoundedSquares animation="matrix" time="4s" />',
       },
       {
         props: {
-          animation: "rotate",
-          rgbColorNumbers:"83, 164, 126",
-          borderColor: "#78EEB6",
-          borderRadius: "0.5rem",
+          animation: 'rotate',
+          rgbColorNumbers: '83, 164, 126',
+          borderColor: '#78EEB6',
+          borderRadius: '0.5rem',
         },
-        code: `<RoundedSquares animation="rotate" rgbColorNumbers="83, 164, 126" borderColor="#78EEB6" borderRadius="0.5rem" />`,
+        code: '<RoundedSquares animation="rotate" rgbColorNumbers="83, 164, 126" borderColor="#78EEB6" borderRadius="0.5rem" />',
       },
     ]}
   />

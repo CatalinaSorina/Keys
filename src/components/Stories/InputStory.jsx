@@ -31,7 +31,7 @@ const InputStory = () => (
         props: {
           text: 'Default',
         },
-        code: `<Input text="Default" />`,
+        code: '<Input text="Default" />',
       },
       {
         props: {
@@ -40,17 +40,17 @@ const InputStory = () => (
           padding: '2rem',
           borderRadius: '0',
         },
-        code: `<Input text="Big" width="18rem" padding="2rem" borderRadius="0" />`,
+        code: '<Input text="Big" width="18rem" padding="2rem" borderRadius="0" />',
       },
       {
         props: {
           placeholder: 'Colorful placeholder',
-          fontSize:'1.2rem',
+          fontSize: '1.2rem',
           color: '#4E745B',
           backgroundColor: '#82CC9B',
           border: 'none',
           placeholderColor: '#7C5E5E',
-          placeholderTextShadow:'none',
+          placeholderTextShadow: 'none',
         },
         code: `<Input placeholder="Colorful placeholder" fontSize="1.2rem" color="#4E745B" backgroundColor="#82CC9B" border="none" placeholderColor="#7C5E5E" placeholderTextShadow="none" />
     or \nconst inputStyle = { fontSize="1.2rem",
@@ -65,7 +65,7 @@ const InputStory = () => (
           text: 'Font with styledComponent',
           width: '20rem',
           border: 'none',
-          styledComponent: `font: 1.5rem Tahoma; font-style:italic;`,
+          styledComponent: 'font: 1.5rem Tahoma; font-style:italic;',
         },
         code: `<Input text="With font" width="20rem" border="none" styledComponent={\`font: 1.5rem Tahoma;font-style:italic;\`} />
     or \nconst inputStyleComponent = \`

@@ -13,21 +13,21 @@ const DotsStory = () => (
     examples={[
       {
         props: {},
-        code: `<Dots />`,
+        code: '<Dots />',
       },
       {
         props: {
-          borderColors: "none",
-          style: {margin:"5rem"}
+          borderColors: 'none',
+          style: { margin: '5rem' },
         },
-        code: `<Dots borderColors="none" />`,
+        code: '<Dots borderColors="none" />',
       },
       {
         props: {
-          colors:["#C1E9FF","#9ADCFF","#43BCFC"],
-          borderColors: "#06517A",
+          colors: ['#C1E9FF', '#9ADCFF', '#43BCFC'],
+          borderColors: '#06517A',
         },
-        code: `<Dots colors={["#C1E9FF","#9ADCFF","#43BCFC"]} borderColors="#06517A" />`,
+        code: '<Dots colors={["#C1E9FF","#9ADCFF","#43BCFC"]} borderColors="#06517A" />',
       },
     ]}
   />

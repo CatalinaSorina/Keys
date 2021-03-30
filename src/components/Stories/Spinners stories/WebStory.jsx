@@ -13,20 +13,20 @@ const WebStory = () => (
     examples={[
       {
         props: {},
-        code: `<Web />`,
+        code: '<Web />',
       },
       {
         props: {
           color: '#FFCC87',
         },
-        code: `<Web color="#FFCC87" />`,
+        code: '<Web color="#FFCC87" />',
       },
       {
         props: {
           color: '#526F9F',
           spiderColor: '#FFCC87',
         },
-        code: `<Web color="#526F9F" spiderColor="#FFCC87" />`,
+        code: '<Web color="#526F9F" spiderColor="#FFCC87" />',
       },
     ]}
   />

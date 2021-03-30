@@ -21,20 +21,20 @@ const CrossStory = () => (
     examples={[
       {
         props: {},
-        code: `<Cross />`,
+        code: '<Cross />',
       },
       {
         props: {
-          colors: "peach",
+          colors: 'peach',
         },
-        code: `<Cross colors="peach" />`,
+        code: '<Cross colors="peach" />',
       },
       {
         props: {
-          colors:["red","yellow","blue","green","black","purple","orange","lightgreen"],
+          colors: ['red', 'yellow', 'blue', 'green', 'black', 'purple', 'orange', 'lightgreen'],
           unicolor: true,
         },
-        code: `<Cross colors={["red","yellow","blue","green","black","purple","orange","lightgreen"]} unicolor />`,
+        code: '<Cross colors={["red","yellow","blue","green","black","purple","orange","lightgreen"]} unicolor />',
       },
     ]}
   />
