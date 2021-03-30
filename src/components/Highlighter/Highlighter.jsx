@@ -1,13 +1,16 @@
+/* eslint-disable object-curly-newline */
 import React, { useEffect, useState } from 'react';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
-import {
- DARK, PAPER, getStyle, Select,
-} from './Highlighter.styles';
+import { DARK, PAPER, getStyle, Select } from './Highlighter.styles';
 
 hljs.registerLanguage('javascript', javascript);
 
-const Highlighter = ({ code }) => {
+type HighlighterProps = {
+  code: string,
+};
+
+const Highlighter = ({ code }: HighlighterProps) => {
   const node = React.createRef();
   const [styleCode, setStyleCode] = useState(DARK);
   const Style = getStyle(styleCode);
