@@ -9,15 +9,15 @@ import { combineStyle } from '../../data/utils';
 import { activeButtonDefaultStyle, tabDefaultStyle } from './Tab.styles';
 
 type TabProps = {
-  openTabText: string,
+  openTabText?: string,
   closeTabText?: string,
-  activeTab: boolean,
-  buttonStyle: ButtonProps,
+  activeTab?: boolean,
+  buttonStyle?: ButtonProps,
   activeButtonStyle?: ButtonProps,
   tabStyle?: WrapperProps,
   children: Node,
   setActiveTab?: Function,
-  withTabHolder: boolean,
+  withTabHolder?: boolean,
 };
 
 const Tab = ({
@@ -63,9 +63,13 @@ const Tab = ({
 
 Tab.defaultProps = {
   openTabText: 'Open',
+  closeTabText: null,
   activeTab: false,
   buttonStyle: {},
   withTabHolder: false,
+  activeButtonStyle: null,
+  tabStyle: null,
+  setActiveTab: null,
 };
 
 export default Tab;
