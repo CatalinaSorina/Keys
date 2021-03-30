@@ -1,10 +1,10 @@
-//@flow
+// @flow
 import React, { useState } from 'react';
+import type { Node } from 'react';
 import Wrapper from '../Wrapper/Wrapper';
 import Button from '../Button/Button';
 import type { ButtonProps } from '../Button/Button';
 import type { WrapperProps } from '../Wrapper/Wrapper';
-import type { Node } from 'react';
 import { combineStyle } from '../../data/utils';
 import { activeButtonDefaultStyle, tabDefaultStyle } from './Tab.styles';
 
@@ -33,20 +33,20 @@ const Tab = ({
 }: TabProps) => {
   const [active, setActive] = useState(activeTab);
 
-  const checkActiveTab = setActiveTab? activeTab:active;
+  const checkActiveTab = setActiveTab ? activeTab : active;
   const buttonCurrentStyle = checkActiveTab
     ? combineStyle(activeButtonStyle, activeButtonDefaultStyle)
     : buttonStyle;
-  const tabStyleCombined = tabStyle? combineStyle(tabStyle, tabDefaultStyle):tabDefaultStyle;
+  const tabStyleCombined = tabStyle ? combineStyle(tabStyle, tabDefaultStyle) : tabDefaultStyle;
 
   const { display, ...restTabStyleCombined } = tabStyleCombined;
   const displayTab = display !== 'none' ? display : 'flex';
 
   return (
-    <React.Fragment>
+    <>
       <Button
         {...buttonCurrentStyle}
-        onClick={() => setActiveTab ? setActiveTab():setActive(!active) }
+        onClick={() => (setActiveTab ? setActiveTab() : setActive(!active))}
         text={checkActiveTab && closeTabText ? closeTabText : openTabText}
       />
       {!withTabHolder && (
@@ -57,7 +57,7 @@ const Tab = ({
           {children}
         </Wrapper>
       )}
-    </React.Fragment>
+    </>
   );
 };
 
