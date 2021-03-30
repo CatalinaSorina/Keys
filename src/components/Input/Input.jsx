@@ -1,28 +1,27 @@
 // @flow
 import React, { useState } from 'react';
 import InputStyled from './Input.style';
-import type styled from 'styled-components';
 
 type InputProps = {
-  width: string,
-  height: string,
-  padding: string,
-  margin: string,
-  borderRadius: string,
-  outline: string,
-  border: string,
-  backgroundColor: string,
-  color: string,
-  fontSize: string,
-  textShadow: string,
-  textAlign: string,
-  placeholderColor: string,
-  placeholderTextShadow: string,
+  width?: string,
+  height?: string,
+  padding?: string,
+  margin?: string,
+  borderRadius?: string,
+  outline?: string,
+  border?: string,
+  backgroundColor?: string,
+  color?: string,
+  fontSize?: string,
+  textShadow?: string,
+  textAlign?: string,
+  placeholderColor?: string,
+  placeholderTextShadow?: string,
   text?: string | number,
   onChange?: Function,
-  type: string,
+  type?: string,
   value?: any,
-  styledComponent?: styled,
+  styledComponent?: string,
 };
 
 const Input = (props: InputProps) => {
@@ -49,8 +48,10 @@ const Input = (props: InputProps) => {
   } = props;
   const [textState, setTextState] = useState(text);
 
+  // eslint-disable-next-line no-undef
   const handleOnChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
     setTextState(e.target.value);
+    // eslint-disable-next-line no-unused-expressions
     onChange && onChange();
   };
 
@@ -96,6 +97,10 @@ Input.defaultProps = {
   placeholderColor: '#FFCAD4',
   placeholderTextShadow: '0 0.01rem 0.05rem black',
   type: 'text',
+  text: '',
+  onChange: () => {},
+  value: null,
+  styledComponent: '',
 };
 
 export default Input;

@@ -1,7 +1,8 @@
-import styled from "styled-components";
+/* eslint-disable comma-dangle */
+import styled, { css } from 'styled-components';
 
-const InputStyled = styled.input`
-  ${({ styledComponent, addStyle }) => `
+const InputStyled = styled.input(
+  ({ styledComponent, addStyle }) => css`
     width: ${addStyle.width};
     height: ${addStyle.height};
     padding: ${addStyle.padding};
@@ -19,9 +20,11 @@ const InputStyled = styled.input`
       color: ${addStyle.placeholderColor};
       text-shadow: ${addStyle.placeholderTextShadow};
     }
-    
-    ${styledComponent && styledComponent}
-  `}
-`
+
+    ${css`
+      ${styledComponent && styledComponent}
+    `}
+  `
+);
 
 export default InputStyled;
