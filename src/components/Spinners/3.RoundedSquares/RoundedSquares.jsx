@@ -16,8 +16,11 @@ type RoundedSquaresProps = {
   margin: string
 };
 
-const RoundedSquares = ({ loading, animation, time, delay, type, rgbColorNumbers, borderColor, borderRadius, size, margin }:RoundedSquaresProps):Node => (
-  loading && <SquareHolder>
+const RoundedSquares = ({
+ loading, animation, time, delay, type, rgbColorNumbers, borderColor, borderRadius, size, margin,
+}:RoundedSquaresProps):Node => (
+  loading && (
+  <SquareHolder>
     <RoundedSquare
       animation={animation}
       time={time}
@@ -28,7 +31,7 @@ const RoundedSquares = ({ loading, animation, time, delay, type, rgbColorNumbers
       borderRadius={borderRadius}
       size={size}
       margin={margin}
-      />
+    />
     <RoundedSquare
       animation={animation}
       time={time}
@@ -39,7 +42,7 @@ const RoundedSquares = ({ loading, animation, time, delay, type, rgbColorNumbers
       borderRadius={borderRadius}
       size={size}
       margin={margin}
-      />
+    />
     <RoundedSquare
       animation={animation}
       time={time}
@@ -52,6 +55,7 @@ const RoundedSquares = ({ loading, animation, time, delay, type, rgbColorNumbers
       margin={margin}
     />
   </SquareHolder>
+)
 );
 
 export default RoundedSquares;
@@ -63,5 +67,5 @@ RoundedSquares.defaultProps = {
   borderColor: 'white',
   borderRadius: '0.3rem',
   size: '1.5rem',
-  margin: '0.3rem'
+  margin: '0.3rem',
 };

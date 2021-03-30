@@ -1,4 +1,5 @@
 // @flow
+// eslint-disable-next-line import/prefer-default-export
 export const checkColorsIndex = (colors:Array<string> | string, index: number):string => {
   if (Array.isArray(colors)) {
     switch (index) {

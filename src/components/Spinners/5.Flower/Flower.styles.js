@@ -1,6 +1,7 @@
-import styled, { keyframes } from "styled-components";
+/* eslint-disable no-shadow */
+import styled, { keyframes } from 'styled-components';
 
-const opacity = ( opacity0, opacity25, opacity50, opacity75, opacity100 ) => keyframes`
+const opacity = (opacity0, opacity25, opacity50, opacity75, opacity100) => keyframes`
   0% {
     opacity:${opacity0};
   }
@@ -34,7 +35,7 @@ export const Wrapper = styled.div`
   background: transparent;
   width: 6rem;
   height: 6rem;
-  animation-name: ${() => rotate("360deg")};
+  animation-name: ${() => rotate('360deg')};
   animation-duration: 1s;
   animation-iteration-count: infinite;
 `;

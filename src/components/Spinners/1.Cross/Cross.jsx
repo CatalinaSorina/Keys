@@ -17,27 +17,28 @@ type CrossProps = {
   unicolor: boolean,
 };
 
-const Cross = ({ loading, margin, padding, width, height, background, size, color, colors, marginCircle, unicolor }: CrossProps): Wrapper =>
-  loading && (
-    <Wrapper
-      width={width}
-      height={height}
-      background={background}
-      margin={margin}
-      padding={padding}
-    >
-      {['TOP', 'LEFT', 'BOTTOM', 'RIGHT'].map((val, i) => (
-        <Circle
-          color={color}
-          colors={setColors(colors)}
-          unicolor={unicolor}
-          size={size}
-          marginCircle={marginCircle}
-          position={val}
-          colorIndex={i}
-        />
+const Cross = ({
+ loading, margin, padding, width, height, background, size, color, colors, marginCircle, unicolor,
+}: CrossProps): Wrapper => loading && (
+<Wrapper
+  width={width}
+  height={height}
+  background={background}
+  margin={margin}
+  padding={padding}
+>
+  {['TOP', 'LEFT', 'BOTTOM', 'RIGHT'].map((val, i) => (
+    <Circle
+      color={color}
+      colors={setColors(colors)}
+      unicolor={unicolor}
+      size={size}
+      marginCircle={marginCircle}
+      position={val}
+      colorIndex={i}
+    />
       ))}
-    </Wrapper>
+</Wrapper>
   );
 
 Cross.defaultProps = {

@@ -13,15 +13,16 @@ type KeyboardProps = {
   topTextPosition: string
 }
 
-const Keyboard = ({ loading = true, color, text, textColor, size, font, leftTextPosition, topTextPosition }:KeyboardProps) =>
-  loading && (
-    <Wrapper size={size}>
-      <Button color={color}>
-        <TextButton textColor={textColor} font={font} left={leftTextPosition} top={topTextPosition}>
-          {text}
-        </TextButton>
-      </Button>
-    </Wrapper>
+const Keyboard = ({
+ loading = true, color, text, textColor, size, font, leftTextPosition, topTextPosition,
+}:KeyboardProps) => loading && (
+<Wrapper size={size}>
+  <Button color={color}>
+    <TextButton textColor={textColor} font={font} left={leftTextPosition} top={topTextPosition}>
+      {text}
+    </TextButton>
+  </Button>
+</Wrapper>
   );
 
 export default Keyboard;
@@ -34,5 +35,5 @@ Keyboard.defaultProps = {
   size: '8rem',
   font: "lighter 1rem 'Indie Flower', cursive",
   leftTextPosition: '2rem',
-  topTextPosition: '3.8rem'
+  topTextPosition: '3.8rem',
 };

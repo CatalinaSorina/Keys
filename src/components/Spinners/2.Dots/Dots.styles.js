@@ -4,7 +4,7 @@ export const translate = (
   translate0,
   translate30,
   translate60,
-  translate100
+  translate100,
 ) => keyframes`
     0% {
         transform: translate(${translate0});

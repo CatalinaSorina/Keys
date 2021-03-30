@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const opacity = (opacity75) => keyframes`
   0% {
@@ -19,7 +19,7 @@ const opacity = (opacity75) => keyframes`
   }
 `;
 
-const translate = ( translate0, translate25, translate50, translate75, translate100 ) => keyframes`
+const translate = (translate0, translate25, translate50, translate75, translate100) => keyframes`
   0% {
     transform: translate(${translate0});
   }
@@ -55,7 +55,7 @@ export const Spider = styled.div`
   height: 0.3rem;
   background: ${({ color }) => color};
   z-index: 1;
-  animation-name: ${() => translate("2rem,2.1rem", "3rem,5rem", "8rem,7rem", "8rem,3rem", "2rem,2.1rem")};
+  animation-name: ${() => translate('2rem,2.1rem', '3rem,5rem', '8rem,7rem', '8rem,3rem', '2rem,2.1rem')};
   animation-duration: 2s;
   animation-iteration-count: infinite;
 `;
@@ -88,7 +88,7 @@ export const Site = styled.div`
     21% 42%,
     12% 11%
   );
-  box-shadow: inset 0.1rem 0.1rem ${({shadow, color}) => `${shadow} ${color}`};
+  box-shadow: inset 0.1rem 0.1rem ${({ shadow, color }) => `${shadow} ${color}`};
   animation-name: ${() => opacity(0.75)};
   animation-duration: 1s;
   animation-iteration-count: infinite;

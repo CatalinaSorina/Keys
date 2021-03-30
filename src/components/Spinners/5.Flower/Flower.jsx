@@ -12,17 +12,18 @@ type FlowerProps = {
   middleBorderColor: string,
 };
 
-const Flower = ({ loading, color, middleColor, removeBorder, removeMiddleBorder, borderColor, middleBorderColor }:FlowerProps) =>
-  loading && (
-    <Wrapper>
-      <Petal color={color} position="1/2" removeBorder={removeBorder} borderColor={borderColor} />
-      <Petal color={color} position="2/1" rotate="-60deg" removeBorder={removeBorder} borderColor={borderColor} />
-      <Petal color={color} position="2/3" rotate="60deg" removeBorder={removeBorder} borderColor={borderColor} />
-      <Dot color={middleColor} removeBorder={removeMiddleBorder} borderColor={middleBorderColor} />
-      <Petal color={color} position="5/2" removeBorder={removeBorder} borderColor={borderColor} />
-      <Petal color={color} position="4/1" rotate="60deg" removeBorder={removeBorder} borderColor={borderColor} />
-      <Petal color={color} position="4/3" rotate="-60deg" removeBorder={removeBorder} borderColor={borderColor} />
-    </Wrapper>
+const Flower = ({
+ loading, color, middleColor, removeBorder, removeMiddleBorder, borderColor, middleBorderColor,
+}:FlowerProps) => loading && (
+<Wrapper>
+  <Petal color={color} position="1/2" removeBorder={removeBorder} borderColor={borderColor} />
+  <Petal color={color} position="2/1" rotate="-60deg" removeBorder={removeBorder} borderColor={borderColor} />
+  <Petal color={color} position="2/3" rotate="60deg" removeBorder={removeBorder} borderColor={borderColor} />
+  <Dot color={middleColor} removeBorder={removeMiddleBorder} borderColor={middleBorderColor} />
+  <Petal color={color} position="5/2" removeBorder={removeBorder} borderColor={borderColor} />
+  <Petal color={color} position="4/1" rotate="60deg" removeBorder={removeBorder} borderColor={borderColor} />
+  <Petal color={color} position="4/3" rotate="-60deg" removeBorder={removeBorder} borderColor={borderColor} />
+</Wrapper>
   );
 export default Flower;
 
@@ -33,5 +34,5 @@ Flower.defaultProps = {
   removeBorder: false,
   removeMiddleBorder: false,
   borderColor: 'white',
-  middleBorderColor: 'white'
+  middleBorderColor: 'white',
 };

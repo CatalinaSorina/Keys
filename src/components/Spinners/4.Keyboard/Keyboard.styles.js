@@ -46,12 +46,11 @@ const scale = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  width: ${({ size }) => (size ? size : '8rem')};
-  height: ${({ size }) => (size ? size : '8rem')};
+  width: ${({ size }) => (size || '8rem')};
+  height: ${({ size }) => (size || '8rem')};
   filter: drop-shadow(-0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.5));
   animation: ${shadow} 1.5s infinite;
-  ${({ size }) =>
-  css`
+  ${({ size }) => css`
     width: ${size};
     height: ${size};
   `}
@@ -61,7 +60,7 @@ export const Button = styled.button`
   position: relative;
   width: inherit;
   height: inherit;
-  background: ${({ color }) =>color};
+  background: ${({ color }) => color};
   outline: none;
   border-radius: 1rem;
   border: none;
@@ -80,8 +79,9 @@ export const Button = styled.button`
 
 export const TextButton = styled.h4`
   position: absolute;
-  ${({ textColor, font, left, top }) =>
-  css`
+  ${({
+ textColor, font, left, top,
+}) => css`
     color: ${textColor};
     font: ${font};
     left: ${left};
