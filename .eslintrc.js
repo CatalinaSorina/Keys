@@ -21,5 +21,6 @@ module.exports = {
     indent: 0,
     'valid-typeof': 0,
     'react/jsx-props-no-spreading': 0,
+    'react/no-array-index-key': 0,
   },
 };
