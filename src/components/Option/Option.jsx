@@ -1,12 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-const Option = (props) => {
-    const {type, active, style, activeStyle, restProps} = props;
-    return (
-        <div>
-            
-        </div>
-    )
-}
+// eslint-disable-next-line arrow-body-style
+const Option = () => {
+  return <div />;
+};
 
 export default Option;
